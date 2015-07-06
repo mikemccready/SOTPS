@@ -29,6 +29,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+gem 'paperclip'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
