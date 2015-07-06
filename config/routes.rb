@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :comments
   root 'posts#index'
   resources :users
   get 'sessions/new'
