@@ -11,7 +11,19 @@ Rails.application.routes.draw do
   resources :users
 
   resources :posts do
-    resources :comments
+    member do
+      post 'vote'
+      # get 'count'
+    end 
+
+    collection do
+      get 'archives'
+    end 
+
+    resources :comments do
+      post 'vote'
+    end
+      
   end 
 
    
