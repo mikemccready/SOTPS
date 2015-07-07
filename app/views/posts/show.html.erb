@@ -31,7 +31,19 @@
 
 <p>Comment</p>
 <% @post.comments.each do |comment| %>
-	<p><strong><%= comment.user.name %></strong><%= comment.body %></p>
+	<p>
+		<%= comment.up_votes %>
+        <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
+        	<strong>+</strong>
+        <% end %>  
+        | <%= comment.total_votes %> |
+        <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
+         	<strong>-</strong>
+        <% end %>  
+        <%= comment.down_votes %>
+
+		<strong><%= comment.user.name %></strong><%= comment.body %>
+	</p>
 <% end %>
 <% if current_user %>
 	<%= form_for([@post, @post.comments.build]) do |f| %>
