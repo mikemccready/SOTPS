@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div class="voteCount">
+ 	<%= @post.up_votes %>
+ 	<%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
+   		<strong>+</strong>
+ 	<% end %>  
+ 	| <%= @post.total_votes %> |
+ 	<%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
+   		<strong>-</strong>
+ 	<% end %>  
+ 	<%= @post.down_votes %>
+</div>
+ <br>
+
 <%= image_tag @post.image %>
 <p>
   <strong><%= @post.user.name %></strong>
