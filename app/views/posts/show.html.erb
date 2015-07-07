@@ -22,3 +22,14 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<p>Comment</p>
+<% @post.comments.each do |comment| %>
+	<%= comment.body %>
+<% end %>
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+	<%= f.submit %>
+<% end %>	
