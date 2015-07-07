@@ -56,6 +56,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def vote
+    # comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:comment_id])
+    vote = Vote.create(voteable: @comment, user: current_user, vote: params[:vote])
+      if vote.valid?
+        flash[:notice] = "Your vote was counted."
+      else
+        flash[:error] = "You can only vote once."
+      end
+    redirect_to :back    
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
