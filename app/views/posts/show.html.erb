@@ -1,23 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @post.image %>
 <p>
-  <strong>Title:</strong>
+  <strong><%= @post.user.name %></strong>
+</p>
+
+<p>
   <%= @post.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @post.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
@@ -27,8 +20,11 @@
 <% @post.comments.each do |comment| %>
 	<p><strong><%= comment.user.name %></strong><%= comment.body %></p>
 <% end %>
-
-<%= form_for([@post, @post.comments.build]) do |f| %>
-	<%= f.text_field :body %>
-	<%= f.submit %>
-<% end %>	
+<% if current_user %>
+	<%= form_for([@post, @post.comments.build]) do |f| %>
+		<%= f.text_field :body %>
+		<%= f.submit %>
+	<% end %>
+<% else %>
+	<%= link_to "Sign in to comment", "/auth/facebook" %>
+<% end %>		
