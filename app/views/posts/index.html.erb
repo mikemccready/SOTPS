@@ -5,14 +5,28 @@
 <table>
   <tbody>
     <% @posts.each do |post| %>
+      <hr> 
       <tr>
-        <td><%= image_tag post.image.url(:med) %><br><hr></td>
+        <td>
+          <%= post.up_votes %>
+          <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+            <h1>+</h1>
+          <% end %>  
+          <br>
+          <%= post.total_votes %>
+          <br>
+          <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+            <h1>-</h1>
+          <% end %>  
+          <%= post.down_votes %>
+        </td>
+        <td><%= image_tag post.image.url(:med) %><br></td>
         <td><strong><%= post.title %></strong></td>
         <td><%= post.description %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      </tr>  
     <% end %>
   </tbody>
 </table>

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
 	has_many :posts
 	has_many :comments
+	has_many :votes
 
 	def self.from_omniauth(auth)
 		user = find_or_create_by(uid: auth['uid'], provider: auth['provider'])
