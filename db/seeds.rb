@@ -10,3 +10,26 @@ admin = User.create(
 	name: 'Socrates',
 	uid: 1,
 	provider: 'godmode')
+
+
+categories = Category.create([
+	{ name: 'Art & Design' },
+	{ name: 'Business' },
+	{ name: 'Education' },
+	{ name: 'Engineering' },
+	{ name: 'Entertainment' },
+	{ name: 'Finance' },
+	{ name: 'Fitness' },
+	{ name: 'Food' },
+	{ name: 'Medicine' },
+	{ name: 'Music' },
+	{ name: 'Programming' },
+	{ name: 'Psychology' },
+	{ name: 'Retail' },
+	{ name: 'Science & Bio-Tech' },
+	{ name: 'Technology' },
+	])
+
+
+
+
