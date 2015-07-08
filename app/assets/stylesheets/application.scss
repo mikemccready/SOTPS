@@ -73,7 +73,7 @@ h1 {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-color: rgba(255,255,255,.9);
+	background-color: rgba(255,255,255,.75);
 	margin: 1em 0;
 }
 
@@ -86,7 +86,7 @@ h1 {
 #posterName {
 	display: inline-block;
 	padding: .5em 1em .25em 0;
-	color: rgba(0,0,0,.5);
+	color: rgba(0,0,0,.66);
 }
 
 #logThumb {
@@ -96,12 +96,14 @@ h1 {
 }
 
 #postTag {
+
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	background-color: rgba(255,255,255,.9);
-	margin: 1em 0;
-	color: rgba(0,0,0,.5);
+	background-color: rgba(255,255,255,.75);
+	margin: 0 2em 1em 0;
+	color: rgba(0,0,0,.66);
+
 }
 
 

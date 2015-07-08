@@ -14,7 +14,6 @@
 		<%= image_tag current_user.image_url, id:"logThumb" %>
 	<% end %>
 
-
 	<% if current_user %>
 		<button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="small secondary dropdown" id="dropButt"><strong>Menu</strong></button>
 		<ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
@@ -29,6 +28,8 @@
 	</nav>		
 
 <%= yield %>
+
+
 
 </body>
 </html>
