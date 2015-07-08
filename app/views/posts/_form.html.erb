@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :category %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose category"} %>
+  </div>
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
