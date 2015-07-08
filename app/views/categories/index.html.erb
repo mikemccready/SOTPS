@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @categories.name %></h1>
+
+<table>
+  <tbody>
+    <% @categories.each do |c| %>
+      <tr>
+        <td><strong><%= link_to c.name, c %></strong></td>
+      </tr>  
+    <% end %>
+  </tbody>
+</table>
+
+<br>
