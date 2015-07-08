@@ -9,10 +9,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<% if current_user %>
+		<%= image_tag current_user.image_url, id:"logThumb" %>
+	<% end %>
+
 
 	<% if current_user %>
-		Signed in as <strong><%= current_user.name %></strong>
-		<%= link_to "Sign Out", signout_path, id: "sign_out" %>
+		<button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="tiny secondary dropdown"></button><br>
+		<ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
+  			<li><strong>Hi <%= current_user.name %></strong></li>
+  			<li><%= link_to "Sign Out", signout_path, id: "sign_out" %></li>
+		</ul>		
 	<% else %>
 		<%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
 	<% end %>		

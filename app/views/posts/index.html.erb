@@ -4,11 +4,18 @@
 
 <%= link_to "Categories", categories_path %>
 
-<table>
-  <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td>
+      <div class="row" id="post">
+        <div class="small-12 columns" id="postImg" style="background-image: url(<%= post.image.url %>)">
+          <%= image_tag post.user.image_url, class:"small-2 columns", id:"userThumb" %>
+          <%= post.user.name %>
+        
+          <div class="small-12 columns" id="postTag">
+            <strong><%= link_to post.title, post %></strong><br>
+            <%= link_to post.description%>
+          </div>
+        </div>
+        <div>
           <%= post.up_votes %>
           <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
             <strong>+</strong>
@@ -18,18 +25,14 @@
             <strong>-</strong>
           <% end %>  
           <%= post.down_votes %>
-        </td>
-        <td><%= image_tag post.image.url(:med) %><br></td>
-        <td><strong><%= post.title %></strong></td>
-        <td><%= post.description %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
-      </tr>  
+        </div>
+      </div>  
+
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
+
