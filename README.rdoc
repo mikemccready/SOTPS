@@ -26,3 +26,27 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+CATEGORIES
+
+Design
+Technology
+Programming
+Food
+Science/Bio-tech
+Music
+Fitness
+Finance
+Art
+Business
+Psychology
+Entertainment
+Education
+Engineering
+Government
+Medical
+Retail
+
+
+
+
