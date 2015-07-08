@@ -16,7 +16,7 @@
 
 
 	<% if current_user %>
-		<button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="tiny secondary dropdown" id="dropButt">Menu</button>
+		<button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="small secondary dropdown" id="dropButt"><strong>Menu</strong></button>
 		<ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
   			<li><strong>Hi <%= current_user.name %></strong></li>
   			<li><%= link_to 'New Post', new_post_path %></li>
