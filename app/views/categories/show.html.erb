@@ -2,6 +2,8 @@
 
 <h1><%= @categories.name %></h1>
 
+<%= link_to "Back to Categories", categories_path %>
+
 <table>
   <tbody>
     <% @posts.each do |post| %>
