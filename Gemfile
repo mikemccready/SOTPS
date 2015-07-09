@@ -33,6 +33,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+
 gem 'paperclip'
 
 # Use Unicorn as the app server
