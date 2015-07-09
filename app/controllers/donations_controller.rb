@@ -1,4 +1,4 @@
-class ChargesController < ApplicationController
+class DonationsController < ApplicationController
 
 def new
 end

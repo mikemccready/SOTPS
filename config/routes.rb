@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :categories
-  resources :charges
+  resources :donations
 
   resources :posts do
     member do
