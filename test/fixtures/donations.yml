@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poster_id: MyString
+  user_id: MyString
+  amount: MyString
+  card_token: MyString
+  post_id: MyString
+
+two:
+  poster_id: MyString
+  user_id: MyString
+  amount: MyString
+  card_token: MyString
+  post_id: MyString
