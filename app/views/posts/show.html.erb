@@ -12,20 +12,22 @@
  	<% end %>  
  	<%= @post.down_votes %>
 </div>
- <br>
 
 <!-- post details -->
-<%= image_tag @post.image %>
-<p><strong><%= @post.user.name %></strong></p>
-<p><%= @post.title %></p>
-<p><%= @post.description %></p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="row">
+  <%= image_tag @post.image %>
+  <p><strong><%= @post.user.name %></strong></p>
+  <p><%= @post.title %></p>
+  <p><%= @post.description %></p>
+  <p>Funds raised $<%= @post.funds %></p>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+</div>
 
 <!-- comment section -->
-<p>Comment</p>
+<h5>Comment</h5>
 <% @post.comments.each do |comment| %>
+<div class="row">
   <!-- comment voting -->
 	<%= comment.up_votes %>
     <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
@@ -37,17 +39,19 @@
     <% end %>  
     <%= comment.down_votes %>
 	<strong><%= comment.user.name %></strong><%= comment.body %>
+  </div>
 <% end %>
 
 <!-- if user is signed in allow new comment -->
-<% if current_user %>
-	<%= form_for([@post, @post.comments.build]) do |f| %>
-		<%= f.text_field :body %>
-		<%= f.submit %>
-	<% end %>
-<% else %>
-	<%= link_to "Sign in to comment", "/auth/facebook" %>
-<% end %>		
+<div class="small-12 columns">
+  <% if current_user %>
+  	<%= form_for([@post, @post.comments.build]) do |f| %>
+  		<%= f.text_field :body, placeholder:"Comment" %>
+  	<% end %>
+  <% else %>
+  	<%= link_to "Sign in to comment", "/auth/facebook" %>
+  <% end %>	
+</div>	
 
 <!-- donate section -->
 <%= form_tag post_donations_path(@post), method: 'post' do  %>

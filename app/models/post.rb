@@ -21,4 +21,9 @@ class Post < ActiveRecord::Base
 		self.votes.where(vote: false).size
 	end	
 
+	def funds
+		# self.donations.sum(:amount)
+		self.donations.map{|a| a.amount.to_i}.sum/100
+	end	
+
 end
