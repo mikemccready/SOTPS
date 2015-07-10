@@ -25,7 +25,9 @@ Rails.application.routes.draw do
       post 'vote'
     end
 
-    resources :donations
+    resources :donations do 
+      post 'donate'
+    end  
       
   end 
 

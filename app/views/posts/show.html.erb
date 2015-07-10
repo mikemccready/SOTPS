@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<!-- vote display and controls -->
 <div class="voteCount">
  	<%= @post.up_votes %>
  	<%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
@@ -13,38 +14,32 @@
 </div>
  <br>
 
+<!-- post details -->
 <%= image_tag @post.image %>
-<p>
-  <strong><%= @post.user.name %></strong>
-</p>
-
-<p>
-  <%= @post.title %>
-</p>
-
-<p>
-  <%= @post.description %>
-</p>
+<p><strong><%= @post.user.name %></strong></p>
+<p><%= @post.title %></p>
+<p><%= @post.description %></p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 
+<!-- comment section -->
 <p>Comment</p>
 <% @post.comments.each do |comment| %>
-	<p>
-		<%= comment.up_votes %>
-        <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
-        	<strong>+</strong>
-        <% end %>  
-        | <%= comment.total_votes %> |
-        <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
-         	<strong>-</strong>
-        <% end %>  
-        <%= comment.down_votes %>
-
-		<strong><%= comment.user.name %></strong><%= comment.body %>
-	</p>
+  <!-- comment voting -->
+	<%= comment.up_votes %>
+    <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
+      <strong>+</strong>
+    <% end %>  
+    | <%= comment.total_votes %> |
+    <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
+        <strong>-</strong>
+    <% end %>  
+    <%= comment.down_votes %>
+	<strong><%= comment.user.name %></strong><%= comment.body %>
 <% end %>
+
+<!-- if user is signed in allow new comment -->
 <% if current_user %>
 	<%= form_for([@post, @post.comments.build]) do |f| %>
 		<%= f.text_field :body %>
@@ -53,3 +48,17 @@
 <% else %>
 	<%= link_to "Sign in to comment", "/auth/facebook" %>
 <% end %>		
+
+<!-- donate section -->
+<%= form_tag post_donations_path(@post), method: 'post' do  %>
+  <article>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"></script>
+<% end %>

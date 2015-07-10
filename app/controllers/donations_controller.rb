@@ -35,13 +35,10 @@ end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    # def donation_params
-    #   params.require(:donation).permit(:amount, :user_id)
-    # end
+    def donation_params
+      params.require(:donation).permit(:amount, :user_id, :post_id, :poster_id)
+    end
 
 end
