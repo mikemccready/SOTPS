@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :categories
-  resources :donations
 
   resources :posts do
     member do
@@ -25,6 +24,8 @@ Rails.application.routes.draw do
     resources :comments do
       post 'vote'
     end
+
+    resources :donations
       
   end 
 
