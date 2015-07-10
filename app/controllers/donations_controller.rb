@@ -1,7 +1,7 @@
 class DonationsController < ApplicationController
 
 def new
-  @donation = Donation.new
+   @donation = Donation.new
 end
 
   def create
@@ -9,10 +9,10 @@ end
     @amount = 500
 
 
-    # @post = Post.find(params[:id])
-    donation = Donation.create(user: current_user, amount: @amount)
-      if donation.valid?
-        donation.save
+    @post = Post.find(params[:post_id])
+    @donation = Donation.create(user: current_user, amount: @amount, post_id: @post.id, poster_id: @post.user_id)
+      if @donation.valid?
+        @donation.save
       end
   
 
