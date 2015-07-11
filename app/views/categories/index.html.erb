@@ -2,15 +2,11 @@
 
 <h1><%= @categories.name %></h1>
 
-<table>
-  <tbody>
-    <% @categories.each do |c| %>
-      <tr>
-        <td><strong><%= link_to c.name, c %></strong></td>
-      </tr>  
-    <% end %>
-  </tbody>
-</table>
+<% @categories.each do |c| %>
+  <div class="row">
+    <h3><%= link_to c.name, c %></h3>
+  </div>
+<% end %>
 
 <%= link_to "Home", posts_path %>
 

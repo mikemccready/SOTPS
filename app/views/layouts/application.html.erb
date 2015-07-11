@@ -9,10 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>
+	<nav class="hide-for-large-up">
 	<% if current_user %>
 		<%= image_tag current_user.image_url, id:"logThumb" %>
 	<% end %>
+
+	<h2 id="menuHead">SOTPS</h2>
 
 	<% if current_user %>
 		<button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="small secondary dropdown" id="dropButt"><strong>Menu</strong></button>
@@ -25,9 +27,31 @@
 	<% else %>
 		<%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
 	<% end %>
-	</nav>		
+	</nav>
 
-<%= yield %>
+	<nav class="show-for-large-up large-3 columns" id="side-nav">
+	<h3>SOTPS</h3>
+	<% if current_user %>
+		<%= image_tag current_user.image_url, id:"logThumb" %>
+	<% end %>
+
+
+	<% if current_user %>
+  		<strong>Hi <%= current_user.name %></strong>
+  		<div class="row"><%= link_to 'New Post', new_post_path %></div>
+  		<div class="row"><%= link_to "Categories", categories_path %></div>
+  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>		
+	<% else %>
+		<%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
+	<% end %>
+	</nav>
+
+	<div class="large-9 columns">
+		<%= yield %>
+	</div>
+
+
+
 
 
 

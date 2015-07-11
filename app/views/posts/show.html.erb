@@ -1,44 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<!-- vote display and controls -->
-<div class="voteCount">
- 	<%= @post.up_votes %>
- 	<%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
-   		<strong>+</strong>
- 	<% end %>  
- 	| <%= @post.total_votes %> |
- 	<%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
-   		<strong>-</strong>
- 	<% end %>  
- 	<%= @post.down_votes %>
-</div>
-
 <!-- post details -->
 <div class="row">
   <%= image_tag @post.image %>
-  <p><strong><%= @post.user.name %></strong></p>
-  <p><%= @post.title %></p>
-  <p><%= @post.description %></p>
-  <p>Funds raised $<%= @post.funds %></p>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
-</div>
+  <%= image_tag @post.user.image_url, class:"small-2 columns", id:"userBigThumb" %>
+  <div class="small-9 columns">
+    <strong><h4><%= @post.title %></h4></strong>
+    <%= @post.user.name %>
+  </div><br><br>
+  <div class="small-12 columns"> 
+    <br>
+    <p><%= @post.description %></p>
+  </div>
+
+  <div class="small-6 columns"> 
+    <!-- donate section -->
+     <p>Funds raised $<%= @post.funds %></p>
+    <%= form_tag post_donations_path(@post), method: 'post' do |f| %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
+              style.visibility="hidden"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="500"></script>
+    <% end %>
+  </div>
+
+  <div class="small-6 columns"> 
+      <!-- vote display and controls -->
+    <div class="voteCount">
+      <%= @post.up_votes %>
+      <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
+          <strong>+</strong>
+      <% end %>  
+      | <%= @post.total_votes %> |
+      <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
+          <strong>-</strong>
+      <% end %>  
+      <%= @post.down_votes %>
+    </div>
+  </div>  
+</div>  
 
 <!-- comment section -->
 <h5>Comment</h5>
 <% @post.comments.each do |comment| %>
 <div class="row">
+  <div class="small-2 columns"
   <!-- comment voting -->
-	<%= comment.up_votes %>
     <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
       <strong>+</strong>
-    <% end %>  
-    | <%= comment.total_votes %> |
+    <% end %> | |  
     <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
         <strong>-</strong>
-    <% end %>  
-    <%= comment.down_votes %>
+    <% end %>
+  </div>    
 	<strong><%= comment.user.name %></strong><%= comment.body %>
+  <%= comment.total_votes %> backers
   </div>
 <% end %>
 
@@ -53,16 +70,6 @@
   <% end %>	
 </div>	
 
-<!-- donate section -->
-<%= form_tag post_donations_path(@post), method: 'post' do  %>
-  <article>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"></script>
-<% end %>
