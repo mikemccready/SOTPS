@@ -20,6 +20,7 @@
 		<button data-dropdown="drop" aria-controls="drop" aria-expanded="false" class="small secondary dropdown" id="dropButt"><strong>Menu</strong></button>
 		<ul id="drop" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">
   			<li><strong>Hi <%= current_user.name %></strong></li>
+  			<li><%= link_to 'Main', posts_path %></li>
   			<li><%= link_to 'New Post', new_post_path %></li>
   			<li><%= link_to "Categories", categories_path %></li>
   			<li><%= link_to "Sign Out", signout_path, id: "sign_out" %></li>
@@ -29,24 +30,25 @@
 	<% end %>
 	</nav>
 
-	<nav class="show-for-large-up large-3 columns" id="side-nav">
-	<h3>SOTPS</h3>
-	<% if current_user %>
-		<%= image_tag current_user.image_url, id:"logThumb" %>
-	<% end %>
+	<nav class="show-for-large-up large-3 columns side-nav" id="side-nav">
+		<div class="row"><h3>SOTPS</h3></div>
+		<% if current_user %>
+			<%= image_tag current_user.image_url, id:"logThumb" %>
+		<% end %>
 
 
-	<% if current_user %>
-  		<strong>Hi <%= current_user.name %></strong>
-  		<div class="row"><%= link_to 'New Post', new_post_path %></div>
-  		<div class="row"><%= link_to "Categories", categories_path %></div>
-  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>		
-	<% else %>
-		<%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
-	<% end %>
+		<% if current_user %>
+	  		<strong>Hi <%= current_user.name %></strong>
+	  		<div class="row"><%= link_to 'Main', posts_path %></div>
+	  		<div class="row"><%= link_to 'New Post', new_post_path %></div>
+	  		<div class="row"><%= link_to "Categories", categories_path %></div><hr>
+	  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div><hr>		
+		<% else %>
+			<%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
+		<% end %>
 	</nav>
 
-	<div class="large-9 columns">
+	<div class="large-9 large-offset-3 columns">
 		<%= yield %>
 	</div>
 
