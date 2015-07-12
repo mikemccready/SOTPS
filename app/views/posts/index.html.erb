@@ -15,17 +15,21 @@
         <%= post.description[0,70]%>..
       </div>
     </div>
-    <div>
-      <%= post.up_votes %>
+
+    <!-- votes control -->
+    <button class="tiny button secondary vote">
+      <%#= post.up_votes %>
       <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
-        <strong>+</strong>
-      <% end %>  
-      | <%= post.total_votes %> |
+        <p>+</p>
+      <% end %> 
+    </button>  
+    <button class="tiny button secondary vote">
       <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
-        <strong>-</strong>
-      <% end %>  
-      <%= post.down_votes %>
-    </div>
+        <p>-</p>
+      <% end %> 
+    </button>   
+      <%#= post.down_votes %>
+      <%= post.total_votes %> votes
   </div>  
 <% end %>
 
