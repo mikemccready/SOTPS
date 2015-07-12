@@ -4,10 +4,33 @@
 <div class="row">
   <%= image_tag @post.image %>
   <%= image_tag @post.user.image_url, class:"small-2 columns", id:"userBigThumb" %>
-  <div class="small-9 columns">
+  </div>  
+  <div class="small-5 columns">
     <strong><h4><%= @post.title %></h4></strong>
     <%= @post.user.name %>
-  </div><br><br>
+  </div>
+  <div class="small-5 columns right"> 
+      <!-- vote display and controls -->
+    <!-- votes control -->
+    <button class="tiny button secondary vote">
+      <%#= post.up_votes %>
+      <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
+        <p>+</p>
+      <% end %> 
+    </button>  
+    <button class="tiny button secondary vote">
+      <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
+        <p>-</p>
+      <% end %> 
+    </button><br>   
+      <%#= post.down_votes %>
+      <%= @post.total_votes %> votes
+  </div>  
+
+
+
+
+  <br><br>
   <div class="small-12 columns"> 
     <br>
     <p><%= @post.description %></p>
@@ -24,24 +47,9 @@
               data-amount="500"></script>
     <% end %>
   </div>
-
-  <div class="small-6 columns"> 
-      <!-- vote display and controls -->
-    <div class="voteCount">
-      <%= @post.up_votes %>
-      <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
-          <strong>+</strong>
-      <% end %>  
-      | <%= @post.total_votes %> |
-      <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
-          <strong>-</strong>
-      <% end %>  
-      <%= @post.down_votes %>
-    </div>
-  </div>  
 </div>  
 
-<!-- comment section -->
+ <!-- comment section -->
 <h5>Comment</h5>
 <% @post.comments.each do |comment| %>
 <div class="row">
