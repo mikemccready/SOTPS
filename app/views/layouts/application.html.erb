@@ -32,7 +32,13 @@
 	<% end %>
 	</nav>
 
-	<nav class="show-for-large-up large-3 columns side-nav" id="side-nav">
+	<div class="large-9 columns">
+		<div class="mainWrap">
+			<%= yield %>
+		</div>	
+	</div>	
+
+	<nav class="show-for-large-up large-3 columns" id="side-nav">
 		<div class="row"><h3>SOTPS</h3></div>
 		<% if current_user %>
 			<%= image_tag current_user.image_url, id:"logThumb" %>
@@ -49,15 +55,6 @@
 			<%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>
 		<% end %>
 	</nav>
-
-	<div class="large-9 large-offset-3 columns">
-		<%= yield %>
-	</div>
-
-
-
-
-
 
 </body>
 </html>
