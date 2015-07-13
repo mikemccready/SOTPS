@@ -18,13 +18,13 @@
 
 	<% if current_user %>
 		<nav>
-			<div id="navTop">MENU</div>
+			<div id="navTop"><strong>Menu<strong></div>
 			<div id="menuToggle">
-	  			<div><strong>Hi <%= current_user.name %></strong></div>
-	  			<div><%= link_to 'Main', posts_path %></div>
-	  			<div><%= link_to 'New Post', new_post_path %></div>
-	  			<div><%= link_to "Categories", categories_path %></div>
-	  			<div><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>
+	  			<div class="row"><strong>Hi <%= current_user.name %></strong></div>
+	  			<div class="row"><%= link_to 'Main', posts_path %></div>
+	  			<div class="row"><%= link_to 'New Post', new_post_path %></div>
+	  			<div class="row"><%= link_to "Categories", categories_path %></div>
+	  			<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>
   			</div>
 		</nav>		
 	<% else %>

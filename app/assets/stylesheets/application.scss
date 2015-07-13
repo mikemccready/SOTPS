@@ -38,8 +38,27 @@ h1 {
 	height: 100vh;
 }
 
+#navTop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 1em;
+	border-radius: 2em;
+	z-index: 1000;
+	font-family: bebas neue;
+}
+
 #menuToggle {
 	display: none;
+	width: 100vw;
+	z-index: 2000;
+	text-align: right;
+	padding-right: 2.25em;
+}
+
+#menuToggle .row {
+	margin: 0;
+	padding-right: .5em;
 }
 
 #botton-nav {
@@ -48,24 +67,6 @@ h1 {
 	width: 100vw;
 	left: 0;
 	background-color: white;
-}
-
-#navTop {
-	position: fixed;
-	top: 0;
-	right: 0;
-	border-radius: 2em;
-	z-index: 1000;
-}
-
-#drop {
-	width: 100vw;
-	z-index: 2000;
-}
-
-#drop li {
-	width: 100vw;
-	z-index: 2000;
 }
 
 .row {
@@ -102,8 +103,8 @@ h1 {
 }
 
 #userBigThumb {
-	width: 6.5em;
-	margin: .25em -.75em .25em 0;
+	width: 3em;
+	margin: 0;
 	border-radius: 50%;
 }
 
@@ -139,9 +140,13 @@ h1 {
 
 }
 
+#post h2 {
+	display: inline-block;
+}
+
 .vote {
-	height: 3.5em;
-	width: 3.5em;
+	height: 3em;
+	width: 3em;
 
 	margin-bottom: 0;
 	font-family: bebas neue;
@@ -158,10 +163,12 @@ h1 {
   	text-align: center;
 }
 
-#showVote {
-  display: inline-block;
-  position: absolute;
-  right: 2.5vw;
+#voteCount {
+  text-align: right;
+}
+
+#voteControls {
+	text-align: right;
 }
 
 #showTitle {

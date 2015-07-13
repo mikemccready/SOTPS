@@ -19,7 +19,10 @@
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
-	$('#navTop').click(function() {
+
+
+	$('#navTop').click(function(){
 		$('#menuToggle').slideToggle()
 	})
+
 })
