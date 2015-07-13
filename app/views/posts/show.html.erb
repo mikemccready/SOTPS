@@ -57,14 +57,14 @@
  <!-- comment section -->
 
 <h3>Comments</h3>
-<% @post.comments.each do |comment| %>
+<% @post.comments.all.sort_by{|x| x.total_votes}.reverse.each do |comment| %>
   <div class="row"> 
     <!-- comments -->
-    <div class="small-6 columns">
+    <div class="small-7 columns">
       <%= image_tag comment.user.image_url, id:"logThumb" %>
       <strong><%= link_to comment.user.name, user_path %></strong>
     </div>  
-      <div id="voteControls" class="small-6 columns right">
+      <div id="voteControls" class="small-5 columns right">
         <div class="vote upVote">
           <%#= post.up_votes %>
           <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
