@@ -174,22 +174,33 @@ h1 {
 }
 
 .vote {
+	display: inline-block;
 	height: 3em;
 	width: 3em;
-
 	margin-bottom: 0;
 	font-family: bebas neue;
  	font-weight: bold;
- 	line-height: 0
+ 	line-height: 3em;
+ 	background-color: white;
+ 	text-align: center;
+}
 
+.vote a:hover {
+	background-color: rgba(255,255,255,0) !important;	
+}
 
+.vote h2:hover {
+	color: rgba(0,175,0,.66) !important;
+}
 
+.downVote h2:hover {
+	color: rgba(175,0,0,.66) !important;
 }
 
 .vote h2 {
-  	line-height: .75em;
-  	margin-left: -0.175em;
-  	text-align: center;
+	font-size: 3em;
+	line-height: 1em;
+	color: rgba(0,0,0,.66);
 }
 
 #voteCount {
@@ -202,6 +213,10 @@ h1 {
 
 #showTitle {
 	display: inline-block;
+}
+
+.stripe-button {
+	width: 30em;
 }
 
 

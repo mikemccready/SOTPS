@@ -17,17 +17,17 @@
 
     <!-- votes control -->
     <div id="voteControls" class="small-5 columns right">
-      <button class="tiny button secondary vote">
+      <div class="vote upVote">
         <%#= post.up_votes %>
         <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
-          <p>+</p>
+          <h2>+</h2>
         <% end %> 
-      </button>  
-      <button class="tiny button secondary vote">
+      </div>  
+      <div class="vote downVote">
         <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
-          <p>-</p>
+          <h2>-</h2>
         <% end %> 
-      </button>
+      </div>
     </div>     
       <%#= post.down_votes %>
 
