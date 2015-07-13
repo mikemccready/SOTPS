@@ -18,8 +18,10 @@
 
 body {
 	font-family: avenir;
+	overflow-x: hidden;
 	/*background-color: rgb(230,230,230);*/
 }
+
 
 .mainWrap {
 	max-width: 65em;
@@ -58,10 +60,12 @@ h1 {
 	position: fixed;
 	top: 0;
 	right: 0;
-	padding: .25em .5em;
+	padding: .25em .5em 0;
 	border-radius: 2em;
 	z-index: 1000;
+	background-color: rgba(255,255,255,.9);
 	font-family: bebas neue;
+	letter-spacing: .05em;
 }
 
 
@@ -110,8 +114,15 @@ h1 {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-color: rgba(255,255,255,.75);
+	background-color: rgba(0,0,0,.33);
 	margin: 1em 0;
+	color: white;
+}
+
+#idTag a:visited {
+	
+		color:white !important;
+	
 }
 
 #userThumb {
@@ -129,7 +140,7 @@ h1 {
 #posterName {
 	display: inline-block;
 	padding: .5em 1em .25em 0;
-	color: rgba(0,0,0,.66);
+	color: white;
 }
 
 #logThumb {
@@ -143,9 +154,9 @@ h1 {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	background-color: rgba(255,255,255,.75);
+	background-color: rgba(0,0,0,.33);
 	margin: 0 2em 1em 0;
-	color: rgba(0,0,0,.66);
+	color: white;
 	width: 35em;
 	padding-top: .25em;
 	padding-bottom: .25em;
