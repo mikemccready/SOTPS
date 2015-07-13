@@ -10,8 +10,8 @@
     
     <div class="small-7 columns">
       <%= image_tag @post.user.image_url, id:"userBigThumb" %>
-      <div id="posterName">
-        <%= @post.user.name %>
+      <div id="posterNameDark">
+        <strong><%= @post.user.name %></strong>
       </div>
     </div>    
 
@@ -28,22 +28,28 @@
           <h2>-</h2>
         <% end %> 
       </div>
-    </div>     
+    </div>
+    <br>
+    <br>     
       <%#= post.down_votes %>
 
-    <p class="small-12 columns"><%= @post.description %></p>      
+    <p class="small-12 columns"><br>
+    <br> <%= @post.description %></p>      
     
 
 
-    <div class="small-6 columns"> 
+    <div class="row"> 
       <!-- donate section -->
-       <p>Funds raised $<%= @post.funds %></p>
+       <p class="small-12 columns">Funds raised $<%= @post.funds %></p>
       <%= form_tag post_donations_path(@post), method: 'post' do |f| %>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
-                style.visibility="hidden"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-description="A month's subscription"
-                data-amount="500"></script>
+        <div class="small-12 columns donate-button">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
+                  style.visibility="hidden"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="500">
+          </script>
+        </div>  
       <% end %>
     </div>
   </div>
@@ -54,25 +60,26 @@
 <% @post.comments.each do |comment| %>
   <div class="row"> 
     <!-- comments -->
-    <div class="small-12 columns">
-    	<div class="small-7 columns"><%= link_to comment.user.name, user_path %></strong>
-      <div class="small-5 columns right">
-        <button class="tiny button secondary vote">
+    <div class="small-6 columns">
+      <%= image_tag comment.user.image_url, id:"logThumb" %>
+      <strong><%= link_to comment.user.name, user_path %></strong>
+    </div>  
+      <div id="voteControls" class="small-6 columns right">
+        <div class="vote upVote">
+          <%#= post.up_votes %>
+          <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
+            <h3>+</h3>
+          <% end %>
+        </div>      
+        <div class="vote downVote">
           <%#= post.up_votes %>
           <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
-            <strong>-</strong>
+            <h3>-</h3>
           <% end %>
-        </button> 
-        <button class="tiny button secondary vote">
-          <%#= post.up_votes %>
-        <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
-          <strong>+</strong>
-        <% end %>
-      </button>
-    </div>  
+        </div>  
+      </div>
       <p class="small-7 columns"><%= comment.body %></p>
-      <p class="small-5 columns right"><%= comment.total_votes %> backers</p>
-  </div> 
+  <p class="small-5 columns right comment-body"><%= comment.total_votes %> backers</p> 
 </div>  
 <% end %>
  

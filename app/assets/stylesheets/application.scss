@@ -100,6 +100,10 @@ h1 {
 	background-color: rgba(0,0,0,0);
 }
 
+.row .row {
+	background: none;
+}
+
 #postImg {
 	width: 100%;
 	height: 40vw;
@@ -107,6 +111,7 @@ h1 {
 	background-position: center center;
 	background-size: cover;
 	background-color: white;
+	background-repeat: no-repeat;
 
 }
 
@@ -141,6 +146,12 @@ h1 {
 	display: inline-block;
 	padding: .5em 1em .25em 0;
 	color: white;
+}
+
+#posterNameDark {
+	display: inline-block;
+	padding: .5em 1em .25em 0;
+	color: black;
 }
 
 #logThumb {
@@ -183,6 +194,7 @@ h1 {
  	line-height: 3em;
  	background-color: white;
  	text-align: center;
+ 	border: rgba(255,255,255,.33) solid 2px;
 }
 
 .vote a:hover {
@@ -190,12 +202,24 @@ h1 {
 }
 
 .vote h2:hover {
-	color: rgba(0,175,0,.66) !important;
+	color: white;
+
 }
 
-.downVote h2:hover {
-	color: rgba(175,0,0,.66) !important;
+.downVote:hover {
+	background-color: rgba(175,0,0,.66) !important;
 }
+
+.comment-body {
+	text-align: right;
+}
+
+.upVote:hover {
+	background-color: rgba(0,150,0,.66) !important;
+	color: white;
+}
+
+
 
 .vote h2 {
 	font-size: 3em;
@@ -215,9 +239,7 @@ h1 {
 	display: inline-block;
 }
 
-.stripe-button {
-	width: 30em;
-}
+
 
 
 footer {
