@@ -1,33 +1,37 @@
 
   <div class="row" id="post">
-    <h2><%= @post.title %></h2>
+    <h2 class="small-8 columns"><%= @post.title %></h2>
+    <div id="voteCount" class="small-4 columns">
+      <%= @post.total_votes %> votes
+    </div>  
     <div class="row">
       <%= image_tag @post.image %>
     </div>
     
-    <div>
-      <%= image_tag @post.user.image_url, class:"small-2 columns", id:"userThumb" %>
+    <div class="small-7 columns">
+      <%= image_tag @post.user.image_url, id:"userBigThumb" %>
       <div id="posterName">
         <%= @post.user.name %>
       </div>
     </div>    
 
     <!-- votes control -->
-    <%= @post.total_votes %> votes
-    <button class="tiny button secondary vote">
-      <%#= post.up_votes %>
-      <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
-        <p>+</p>
-      <% end %> 
-    </button>  
-    <button class="tiny button secondary vote">
-      <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
-        <p>-</p>
-      <% end %> 
-    </button>   
+    <div id="voteControls" class="small-5 columns right">
+      <button class="tiny button secondary vote">
+        <%#= post.up_votes %>
+        <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
+          <p>+</p>
+        <% end %> 
+      </button>  
+      <button class="tiny button secondary vote">
+        <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
+          <p>-</p>
+        <% end %> 
+      </button>
+    </div>     
       <%#= post.down_votes %>
 
-    <p><%= @post.description %></p>      
+    <p class="small-12 columns"><%= @post.description %></p>      
     
 
 
@@ -45,16 +49,11 @@
   </div>
 
  <!-- comment section -->
-<h5>Comment</h5>
-<% @post.comments.each do |comment| %>
 
+<h3 class="small-12 columns">Comments</h3>
+<% @post.comments.each do |comment| %>
+  <div class="row"> 
   <!-- comment voting -->
-  <button class="tiny button secondary vote">
-      <%#= post.up_votes %>
-    <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
-      <strong>+</strong>
-    <% end %>
-  </button> 
 	<strong><%= comment.user.name %></strong><%= comment.body %>
   <%= comment.total_votes %> backers
     <button class="tiny button secondary vote">
@@ -63,8 +62,15 @@
         <strong>-</strong>
       <% end %>
     </button> 
-
+    <button class="tiny button secondary vote">
+      <%#= post.up_votes %>
+    <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
+      <strong>+</strong>
+    <% end %>
+  </button>
+  </div> 
 <% end %>
+</div>  
 <!-- if user is signed in allow new comment -->
 <div class="small-12 columns">
   <% if current_user %>
@@ -74,7 +80,8 @@
   <% else %>
   	<%= link_to "Sign in to comment", "/auth/facebook" %>
   <% end %>
-</div>  	
+</div>  
+
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
