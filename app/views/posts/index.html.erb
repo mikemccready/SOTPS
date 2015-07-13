@@ -11,23 +11,23 @@
         </div>
       </div>
       <div class="small-12 columns" id="postTag">
-        <strong><%= link_to post.title, post %></strong><br>
+        <strong><%= link_to post.title, post, style:"color: white" %></strong><br>
         <%= post.description[0,70]%>..
       </div>
     </div>
 
     <!-- votes control -->
-    <button class="tiny button secondary vote">
+    <div class="vote upVote">
       <%#= post.up_votes %>
       <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
-        <p>+</p>
+        <h2>+</h2>
       <% end %> 
-    </button>  
-    <button class="tiny button secondary vote">
+    </div>  
+    <div class="vote downVote">
       <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
-        <p>-</p>
+        <h2>-</h2>
       <% end %> 
-    </button>   
+    </div>   
       <%#= post.down_votes %>
       <%= post.total_votes %> votes
   </div>  
