@@ -38,6 +38,10 @@ h1 {
 	height: 100vh;
 }
 
+#menuToggle {
+	display: none;
+}
+
 #botton-nav {
 	position: fixed;
 	bottom: 0;
@@ -46,7 +50,7 @@ h1 {
 	background-color: white;
 }
 
-#dropButt {
+#navTop {
 	position: fixed;
 	top: 0;
 	right: 0;

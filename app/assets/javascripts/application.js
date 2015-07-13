@@ -17,3 +17,9 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+	$('#navTop').click(function() {
+		$('#menuToggle').slideToggle()
+	})
+})
