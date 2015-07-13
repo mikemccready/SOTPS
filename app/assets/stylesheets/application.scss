@@ -18,7 +18,7 @@
 
 body {
 	font-family: avenir;
-	background-color: rgb(230,230,230);
+	/*background-color: rgb(230,230,230);*/
 }
 
 .mainWrap {
@@ -37,6 +37,17 @@ h1 {
 	text-align: center;
 } 
 
+.row {
+	background-color: white;
+	margin: 1em auto;
+	padding: 2.5%;
+	background: url('bg.jpg') no-repeat center center; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;	
+}
+
 #side-nav {
 	position: fixed;
 	background-color: white;
@@ -47,23 +58,30 @@ h1 {
 	position: fixed;
 	top: 0;
 	right: 0;
-	padding: 1em;
+	padding: .25em .5em;
 	border-radius: 2em;
 	z-index: 1000;
 	font-family: bebas neue;
 }
+
 
 #menuToggle {
 	display: none;
 	width: 100vw;
 	z-index: 2000;
 	text-align: right;
-	padding-right: 2.25em;
+	padding-right: 2.5em;
 }
 
 #menuToggle .row {
 	margin: 0;
-	padding-right: .5em;
+	padding-right: 1.5em;
+}
+
+#menuToggle .row:hover {
+	background-color: black;
+	background-image: none;
+	color: white;
 }
 
 #botton-nav {
@@ -72,12 +90,6 @@ h1 {
 	width: 100vw;
 	left: 0;
 	background-color: white;
-}
-
-.row {
-	background-color: white;
-	margin: 1em auto;
-	padding: 2.5%;	
 }
 
 #banner {
@@ -90,6 +102,7 @@ h1 {
 	max-height: 20em;
 	background-position: center center;
 	background-size: cover;
+	background-color: white;
 
 }
 
@@ -180,6 +193,12 @@ h1 {
 	display: inline-block;
 }
 
+
+footer {
+	background-color: red;
+	height: 5em;
+	width: 100vw;
+}
 
 @media only screen and (max-width: 40em) { 
 

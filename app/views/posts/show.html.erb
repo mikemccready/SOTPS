@@ -50,37 +50,42 @@
 
  <!-- comment section -->
 
-<h3 class="small-12 columns">Comments</h3>
+<h3>Comments</h3>
 <% @post.comments.each do |comment| %>
   <div class="row"> 
-  <!-- comment voting -->
-	<strong><%= comment.user.name %></strong><%= comment.body %>
-  <%= comment.total_votes %> backers
-    <button class="tiny button secondary vote">
-      <%#= post.up_votes %>
-      <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
-        <strong>-</strong>
-      <% end %>
-    </button> 
-    <button class="tiny button secondary vote">
-      <%#= post.up_votes %>
-    <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
-      <strong>+</strong>
-    <% end %>
-  </button>
+    <!-- comments -->
+    <div class="small-12 columns">
+    	<div class="small-7 columns"><%= link_to comment.user.name, user_path %></strong>
+      <div class="small-5 columns right">
+        <button class="tiny button secondary vote">
+          <%#= post.up_votes %>
+          <%= link_to post_comment_vote_path(comment.post, comment, vote: false), method: 'post' do %>
+            <strong>-</strong>
+          <% end %>
+        </button> 
+        <button class="tiny button secondary vote">
+          <%#= post.up_votes %>
+        <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
+          <strong>+</strong>
+        <% end %>
+      </button>
+    </div>  
+      <p class="small-7 columns"><%= comment.body %></p>
+      <p class="small-5 columns right"><%= comment.total_votes %> backers</p>
   </div> 
-<% end %>
 </div>  
+<% end %>
+ 
 <!-- if user is signed in allow new comment -->
-<div class="small-12 columns">
+
   <% if current_user %>
   	<%= form_for([@post, @post.comments.build]) do |f| %>
-  		<%= f.text_field :body, placeholder:"Comment" %>
+  		<%= f.text_field :body, placeholder:"Comment", class:"small-12 columns" %>
   	<% end %>
   <% else %>
   	<%= link_to "Sign in to comment", "/auth/facebook" %>
   <% end %>
-</div>  
+
 
 
 
