@@ -36,8 +36,9 @@
 
     <p class="small-12 columns"><br>
     <br> <%= @post.description %></p>      
-    
-    <%= link_to @post.post_url, "#{@post.post_url}" %>
+    <p class="small-12 columns">
+      <%= link_to "Go to Project", "#{@post.post_url}", :target => "_blank" %>
+    </p>
 
     <div class="row"> 
       <!-- donate section -->
