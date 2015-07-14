@@ -1,39 +1,52 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+
+<%= image_tag @user.image_url %>
+<h2>
   <%= @user.name %>
-</p>
+</h2>
 
 <p>
-  <strong>Organization:</strong>
   <%= @user.organization %>
 </p>
 
-<p>
-  <strong>Uid:</strong>
-  <%= @user.uid %>
-</p>
 
-<p>
-  <strong>Provider:</strong>
-  <%= @user.provider %>
-</p>
+<% @posts.each do |post| %>
+  <div class="row" id="post">
+    <div class="small-12 columns" id="postImg" style="background-image: url(<%= post.image.url %>)">
+      <div id="idTag">
+        <%= image_tag post.user.image_url, class:"small-2 columns", id:"userThumb" %>
+        <div id="posterName">
+          <%= post.user.name %>
+        </div>
+      </div>
+      <div class="small-12 columns" id="postTag">
+        <strong><%= link_to post.title, post, style:"color: white" %></strong><br>
+        <%= post.description[0,70]%>..
+      </div>
+    </div>
 
-<p>
-  <strong>Oauth token:</strong>
-  <%= @user.oauth_token %>
-</p>
+    <div class="small-10 columns">
+      <!-- votes control -->
+      <div class="vote upVote">
+        <%#= post.up_votes %>
+        <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
+          <h2>+</h2>
+        <% end %> 
+      </div>  
+      <div class="vote downVote">
+        <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
+          <h2>-</h2>
+        <% end %> 
+      </div> 
 
-<p>
-  <strong>Oauth expires at:</strong>
-  <%= @user.oauth_expires_at %>
-</p>
+        <%#= post.down_votes %>
+      <%= post.total_votes %> votes
+    </div>  
+      <strong class="small-2 columns"><%= link_to "More", post %></strong>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @user.image_url %>
-</p>
+  </div>  
+<% end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
