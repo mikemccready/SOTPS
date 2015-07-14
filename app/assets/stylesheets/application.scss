@@ -96,6 +96,7 @@ h1 {
 	width: 33%;
 	margin: 0 auto;
 	border-radius: 50%;
+	max-width: 10em;
 }
 
 #botton-nav {
@@ -109,6 +110,11 @@ h1 {
 #banner {
 	background-color: rgba(0,0,0,0);
 	text-align: center;
+}
+
+
+.userShowName {
+	letter-spacing: .075em;
 }
 
 .row .row {

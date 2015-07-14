@@ -1,7 +1,7 @@
 
 <div id="banner">
   <%= image_tag @user.image_url, class:"userShowImg" %>
-  <h2>
+  <h2 class="userShowName">
     <%= @user.name %>
   </h2>
 </div>  
@@ -10,6 +10,7 @@
   <%= @user.organization %>
 </p>
 
+Vote Balance <%= (@posts.map{|a| a.total_votes.to_i}.sum) %>
 
 <% @posts.each do |post| %>
   <div class="row" id="post">
