@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.all.sort_by{|x| x.total_votes}.reverse
   end
 
   # GET /users/new

@@ -92,6 +92,12 @@ h1 {
 	color: white;
 }
 
+.userShowImg {
+	width: 33%;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+
 #botton-nav {
 	position: fixed;
 	bottom: 0;
@@ -102,6 +108,7 @@ h1 {
 
 #banner {
 	background-color: rgba(0,0,0,0);
+	text-align: center;
 }
 
 .row .row {
