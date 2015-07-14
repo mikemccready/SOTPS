@@ -16,6 +16,10 @@
     <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose category"} %>
   </div>
   <div class="field">
+    <%= f.label :post_url %><br>
+    <%= f.text_field :post_url %>
+  </div>
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>

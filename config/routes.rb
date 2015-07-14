@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  get 'posts/blastoff'
+
   get 'sessions/new'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
