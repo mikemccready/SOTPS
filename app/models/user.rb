@@ -13,8 +13,12 @@ class User < ActiveRecord::Base
 		user.image_url = auth.info.image
 		user.oauth_token = auth.credentials.token
 		user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-    user.save!
-    user
-  end  
+    	user.save!
+    	user
+  	end  
+
+  	def total_user_votes
+  		self.posts.map{|a| a.total_votes.to_i}.sum	
+  	end
     
 end
