@@ -10,7 +10,7 @@
   <%= @user.organization %>
 </p>
 
-Vote Balance <%= (@posts.map{|a| a.total_votes.to_i}.sum) %>
+Vote Balance <%= @user.total_user_votes %>
 
 <% @posts.each do |post| %>
   <div class="row" id="post">
