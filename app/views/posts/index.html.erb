@@ -7,7 +7,7 @@
       <div id="idTag">
         <%= image_tag post.user.image_url, class:"small-2 columns", id:"userThumb" %>
         <div id="posterName">
-          <%= post.user.name %>
+          <%= link_to post.user.name, user_path(post.user), style:"color: white" %>
         </div>
       </div>
       <div class="small-12 columns" id="postTag">
