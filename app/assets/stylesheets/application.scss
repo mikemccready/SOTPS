@@ -22,6 +22,10 @@ body {
 	/*background-color: rgb(230,230,230);*/
 }
 
+a:hover {
+	background-color: (0,0,0,0) !important;
+}
+
 
 .mainWrap {
 	max-width: 65em;
