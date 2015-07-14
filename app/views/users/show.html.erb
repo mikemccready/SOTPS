@@ -1,9 +1,10 @@
 
-
-<%= image_tag @user.image_url %>
-<h2>
-  <%= @user.name %>
-</h2>
+<div id="banner">
+  <%= image_tag @user.image_url, class:"userShowImg" %>
+  <h2>
+    <%= @user.name %>
+  </h2>
+</div>  
 
 <p>
   <%= @user.organization %>
