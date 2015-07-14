@@ -53,6 +53,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def blastoff
+    @posts = Post.all.sort_by{|x| x.total_votes}.reverse
+  end  
+
   def vote
     @post = Post.find(params[:id])
     vote = Vote.create(voteable: @post, user: current_user, vote: params[:vote])
@@ -101,6 +105,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :image, :user_id, :category_id)
+      params.require(:post).permit(:title, :description, :image, :user_id, :category_id, :post_url)
     end
 end
