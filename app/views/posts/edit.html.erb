@@ -1,6 +1,6 @@
 <h1>Editing Post</h1>
 
-<% if @post.user_id == current_user.id %>
+<% if @post.user_id.id == current_user.id %>
 	<%= render 'form' %>
 <% end %>	
 

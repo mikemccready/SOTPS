@@ -9,29 +9,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav class="hide-for-large-up">
-	<% if current_user %>
-		<%= image_tag current_user.image_url, id:"logThumb" %>
-	<% end %>
 
-	<h2 id="menuHead">SOTPS</h2>
-
-	<% if current_user %>
-		<nav>
-			<h3 id="navTop">Menu</h3>
-			<div id="menuToggle">
-	  			<div class="row"><strong>Hi <%= current_user.name %></strong></div>
-	  			<div class="row"><%= link_to 'Main', posts_path %></div>
-	  			<div class="row"><%= link_to 'New Post', new_post_path %></div>
-	  			<div class="row"><%= link_to "Categories", categories_path %></div>
-	  			<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>
-  			</div>
-		</nav>		
-	<% else %>
-		<h4 id="signIN"><%= link_to "Sign in with Facebook", "/auth/facebook" %>
-		</h4>
-	<% end %>
-	</nav>
+	<% render "nav_top" %>
 
 	<div class="large-9 columns">
 		<div class="mainWrap">
@@ -40,7 +19,7 @@
 	</div>	
 
 	<nav class="show-for-large-up large-3 large-offset-9 columns" id="side-nav">
-		<div class="row"><h2>SOPS</h2></div>
+		<div class="row"><h2>SOTPS</h2></div>
 		<% if current_user %>
 			<%= image_tag current_user.image_url, id:"logThumb" %>
 		<% end %>
