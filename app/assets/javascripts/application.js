@@ -18,7 +18,7 @@
 
 $(function(){ $(document).foundation(); });
 
-$(document).ready(function(){
+jQuery(document).ready(function($){
 
 
 	$('#navTop').click(function(){
