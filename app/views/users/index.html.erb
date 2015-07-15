@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+<h1>Users</h1>
 
-<h1>Listing Users</h1>
 
-<table>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= image_tag user.image_url %></td>
-      <td><%= user.name %></td>
-      <td><%= user.organization %></td>
-      <td><%= link_to 'Show', user %></td>
-      <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<% @users.each do |user| %>
+  <div class="row">
+    <div class="small-10 columns"><%= image_tag user.image_url %>
+      <%= link_to user.name, user %>
+      <%= user.organization %>
+    </div>
+    <% if ((user.id == current_user.id) || (current_user.name == "Socrates")) %>  
+	    <div class="small-1 columns"><%= link_to 'Edit', edit_user_path(user) %></div>
+	    <div class="small-1 columns"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+	<% end %>    
+  </div>
+<% end %>
+
 
 <br>
 

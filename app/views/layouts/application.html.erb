@@ -48,10 +48,12 @@
 
 		<% if current_user %>
 	  		<strong>Hi <%= current_user.name %></strong>
-	  		<div class="row"><%= link_to 'Main', posts_path %></div>
-	  		<div class="row"><%= link_to 'New Post', new_post_path %></div>
-	  		<div class="row"><%= link_to "Categories", categories_path %></div><hr>
-	  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div><hr>		
+	  		<div class="row">
+		  		<div class="small-12 columns"><%= link_to 'Main', posts_path %></div>
+		  		<div class="small-12 columns"><%= link_to 'New Post', new_post_path %></div>
+		  		<div class="small-12 columns"><%= link_to "Categories", categories_path %></div><hr>
+		  		<div class="small-12 columns"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div><br><hr>
+		  	</div>			
 		<% else %>
 			<h4 id="signinExt"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></h4>
 		<% end %>
