@@ -32,7 +32,7 @@ a:hover {
 	margin: 0 auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
  	font-family: bebas neue;
  	font-weight: bold;
  }
@@ -91,6 +91,24 @@ h1 {
 	background-image: none;
 	color: white;
 }
+
+#signIN {
+	display: inline-block;
+	position: fixed;
+	height: 2em;
+	width: 60%;
+	margin: 0em 20% 0;
+	bottom: 3em;
+	font-family: bebas neue;
+ 	font-weight: bold;
+ 	line-height: 2em;
+ 	background-color: rgba(255,255,255,.95);
+ 	text-align: center;
+ 	outline: rgba(255,255,255,.33) solid 2px;
+ 	z-index: 5000;
+ 	letter-spacing: .075em;
+}
+
 
 .userShowImg {
 	width: 33%;

@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: SOTPS_production
-  username: SOTPS
+  username: rails
   password: <%= ENV['SOTPS_DATABASE_PASSWORD'] %>
