@@ -60,6 +60,10 @@ h1 {
 	height: 100vh;
 }
 
+#side-nav .row .row {
+	padding-left: 2em;
+}
+
 #navTop {
 	position: absolute;
 	top: 0;
@@ -159,10 +163,8 @@ h1 {
 	color: white;
 }
 
-#idTag a:visited {
-	
-		color:white !important;
-	
+#idTag a:visited {	
+		color:white !important;	
 }
 
 #userThumb {
@@ -196,7 +198,6 @@ h1 {
 }
 
 #postTag {
-
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -206,13 +207,11 @@ h1 {
 	width: 35em;
 	padding-top: .25em;
 	padding-bottom: .25em;
-
 }
 
 #menuHead {
 	position: absolute;
 	display: none;
-
 }
 
 #post h2 {
