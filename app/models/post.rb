@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
-	
+
+	searchkick word_middle: [:title, :description]
+	Post.reindex
+
 	belongs_to :user
 	belongs_to :category
 	has_many :comments
