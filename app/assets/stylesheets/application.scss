@@ -97,6 +97,12 @@ h1 {
 	color: white;
 }
 
+#menuLogo h2 {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
 #signIN {
 	display: inline-block;
 	position: fixed;
@@ -224,6 +230,20 @@ h1 {
 	display: inline-block;
 }
 
+.moreButton {
+	display: inline-block;
+	height: 2em;
+	width: 5em;
+	letter-spacing: .05em;
+
+	font-family: bebas neue;
+ 	font-weight: bold;
+ 	line-height: 2em;
+ 	background-color: rgba(255,255,255,1);
+ 	text-align: center;
+ 	border: rgba(255,255,255,0) solid 2px;
+}
+
 .vote {
 	display: inline-block;
 	height: 3em;
@@ -232,22 +252,33 @@ h1 {
 	font-family: bebas neue;
  	font-weight: bold;
  	line-height: 3em;
- 	background-color: white;
+ 	background-color: rgba(255,255,255,1);
  	text-align: center;
- 	border: rgba(255,255,255,.33) solid 2px;
+ 	border: rgba(255,255,255,0) solid 2px;
 }
 
-.vote a:hover {
-	background-color: rgba(255,255,255,0) !important;	
+.vote h2 {
+	font-size: 3em;
+	line-height: 1em;
+	color: rgba(0,0,0,1);
 }
 
-.vote h2:hover {
+.downVote h2:hover {
+	color: rgba(180,0,0,1) !important;	
+}
+
+.vote:hover {
 	color: white;
 
 }
 
 .downVote:hover {
-	background-color: rgba(175,0,0,.66) !important;
+	background-color: white !important;
+	border: rgba(180,0,0,1) solid 2px;
+}
+
+.downVote:hover {
+	background-color: white !important;
 }
 
 .comment-body {
@@ -255,17 +286,13 @@ h1 {
 }
 
 .upVote:hover {
-	background-color: rgba(0,150,0,.66) !important;
-	color: white;
+	background-color: white !important;
+	border: rgba(0,180,0,1) solid 2px; 
 }
 
-
-
-.vote h2 {
-	font-size: 3em;
-	line-height: 1em;
-	color: rgba(0,0,0,.66);
-}
+.upVote h2:hover {
+	color: rgba(0,180,0,1);
+}	
 
 #voteCount {
   text-align: right;
