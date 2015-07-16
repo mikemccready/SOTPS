@@ -1,6 +1,9 @@
-<div class="row" id="banner" style="background-image: url(https://d13yacurqjgara.cloudfront.net/users/87578/screenshots/376168/korol_const_ph.jpg)">
+<!-- <div class="row" id="banner" style="background-image: url(https://d13yacurqjgara.cloudfront.net/users/87578/screenshots/376168/korol_const_ph.jpg)">
   <h1><%= @categories.name %></h1>
-</div>  
+</div>  --> 
+
+<h1><%= @categories.name %></h1>
+
 <% @posts.each do |post| %>
   <div class="row" id="post">
     <div class="small-12 columns" id="postImg" style="background-image: url(<%= post.image.url %>)">
