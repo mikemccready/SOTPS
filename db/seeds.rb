@@ -11,6 +11,10 @@ users = User.create([
 	{name: 'Shaun Masavage', organization: 'Edge Tech Labs', uid: 2, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11295567_10102127337265876_6155131625520089850_n.jpg?oh=dd7ae90a1eccb62fea1940f6cf1e2866&oe=565961EA'},
 	{name: 'James Kinsella', organization: 'Desu box', uid: 3, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/20627_408881632615271_287751988586816856_n.png?oh=7d29b3dab1be50808397dc0eae97ff7f&oe=56194E0D'},
 	{name: 'Oleg Malenkov', organization: 'iblazr lab', uid: 4, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10885299_10204397869378952_134260141009885551_n.jpg?oh=08e6f3a6b0f79557a6b4ecfab2d1acb9&oe=565243AD'},
+	{name: 'Holger Willeke', organization: 'airstier', uid: 5, provider: 'seed', image_url: 'https://lh5.googleusercontent.com/-PU1jq3F5cGY/AAAAAAAAAAI/AAAAAAAAAE8/Ghpf_EAGz7Y/photo.jpg'},
+	{name: 'Boaz Frankel', organization: 'Boaz', uid: 6, provider: 'seed', image_url: 'http://media.oregonlive.com/ent_impact_tvfilm/photo/boazfrankeljpg-6b77949e2fcda8ed.jpg'},
+	{name: 'Stefan Loble', organization: 'Bluff Works', uid: 7, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xfp1/t31.0-8/413437_107306752740904_1948881973_o.jpg'},
+
 ])
 
 
@@ -26,7 +30,19 @@ posts = Post.create([
 
 	 {title: 'iblazr 2', description: 'The World’s Most Ultimate Wireless Flash for iPhone, iPad, Androids and Digital Cameras. Now synced with native camera apps.',
 	 image: 'https://ksr-ugc.imgix.net/assets/004/003/008/65d467bcd3217611a4bd7f5bc15e8d03_original.jpg?v=1434622916&w=680&fit=max&auto=format&q=92&s=a80500baaa61f571cb520f137ef16fb3',
-	 user_id: 3, post_url: 'http://iblazr.com/'},
+	 user_id: 4, post_url: 'http://iblazr.com/'},
+
+	 {title: 'yeair!', description: 'yeair! is the next generation quadrocopter solution. More airtime, more payload, more speed. And... more style.',
+	 image: 'https://ksr-ugc.imgix.net/projects/1828051/photo-original.png?v=1433269857&w=1024&h=768&fit=crop&auto=format&q=92&s=232ffaa8848ad38c707cc40abe6e1d15',
+	 user_id: 5, post_url: 'https://www.yeair.de/'},
+
+	 {title: 'Its Different Every Day', description: 'Finally, a daily calendar with something DIFFERENT every day! Packed with games, stories, sad animal facts, invention ideas & more!',
+	 image: 'https://ksr-ugc.imgix.net/assets/004/074/590/99e1ccd2b04b3e45945a4254dc34761e_original.jpg?v=1435728647&w=680&fit=max&auto=format&q=92&s=98486e9b3c891ff8497090caa9ff2f79',
+	 user_id: 6, post_url: 'http://itsdifferenteveryday.com/'},		
+
+	 {title: 'The Bluff Works Chino', description: 'The Bluff Works Chino - an incredibly soft, wrinkle-free pant that can go days without care.',
+	 image: 'https://ksr-ugc.imgix.net/projects/1916244/photo-original.jpg?v=1435183332&w=1024&h=768&fit=crop&auto=format&q=92&s=401cc7242d7008780d3311d18b56cbc9',
+	 user_id: 7, post_url: 'http://bluffworks.com/'},		  	 
 
 ])
 
