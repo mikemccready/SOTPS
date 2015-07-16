@@ -2,7 +2,7 @@
 
 <% @users.each do |user| %>
   <div class="row">
-    <div class="small-10 columns"><%= image_tag user.image_url %>
+    <div class="small-10 columns"><%= image_tag user.image_url, id:"userIndexThumb" %>
       <%= link_to user.name, user %>
       <%= user.organization %>
     </div>
