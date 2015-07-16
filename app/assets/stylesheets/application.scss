@@ -73,7 +73,7 @@ h1 {
 	border-radius: 2em;
 	z-index: 1000;
 	background-color: rgba(255,255,255,.9);
-	font-family: bebas neue;
+	font-family: "bebas-neue", bebas neue;
 	letter-spacing: .05em;
 }
 
@@ -235,8 +235,7 @@ h1 {
 	height: 2em;
 	width: 5em;
 	letter-spacing: .05em;
-
-	font-family: "bebas-neue";
+	font-family: "bebas-neue", bebas neue;
  	font-weight: bold;
  	line-height: 2em;
  	background-color: rgba(255,255,255,1);
