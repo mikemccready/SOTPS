@@ -1,7 +1,16 @@
 class PostsController < ApplicationController
 
+  def redir
+    redirect_to root_path
+  end  
+
   def index
-    @posts = Post.all.sort_by{|x| x.total_votes}.reverse
+
+    if params[:search].present?
+        @posts = Post.search params[:search]      
+    else
+      @posts = Post.all.sort_by{|x| x.total_votes}.reverse
+    end  
   end
 
   def show
