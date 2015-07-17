@@ -40,7 +40,7 @@ h1, h2, h3, h4 {
  }
 
 h1 {
-	margin-top: 1em;
+	margin-top: .6em;
 	font-size: 8vw;
 	line-height: 1em;
 	text-align: center;
@@ -172,6 +172,7 @@ h1 {
 
 .userShowName {
 	letter-spacing: .075em;
+	margin: 1em auto -1em;
 }
 
 .row .row {
@@ -332,6 +333,13 @@ h1 {
 .indexVote {
 	padding: 0;
 	margin: .25em 0;
+}
+
+.orgShow {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	letter-spacing: .075em;
 }
 
 
