@@ -342,14 +342,17 @@ h1 {
 	letter-spacing: .075em;
 }
 
-
-
-
-footer {
-	background-color: red;
-	height: 5em;
-	width: 100vw;
+.userStats {
+	text-align: right;
+	margin: 2em 0 0;
 }
+
+.userStats h4 {
+	line-height: .75em;	
+	letter-spacing: .05em;
+}
+
+
 
 @media only screen and (max-width: 40em) { 
 
