@@ -4,10 +4,12 @@
   <h2 class="userShowName">
     <%= @user.name %>
   </h2>
-</div>  
+</div> 
+<% if @user.organization != nil %> 
 <p class="orgShow">
   <%= @user.organization.upcase %>
 </p>
+<% end %>
 <div class="userStats">
   <h4>Vote Balance <%= @user.total_user_votes %></h4>
   <!-- <h4>Total Donations $<%#= @user.user_funds %></h4> -->
