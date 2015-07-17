@@ -38,8 +38,6 @@ gem 'stripe'
 
 gem 'paperclip'
 
-gem 'searchkick'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
