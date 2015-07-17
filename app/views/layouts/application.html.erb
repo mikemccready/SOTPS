@@ -3,6 +3,7 @@
 <head>
   <title>SOTPS</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <script src="//use.typekit.net/xnp0tbe.js"></script>
@@ -16,25 +17,24 @@
 	<nav class="hide-for-large-up">
 		<% if current_user %>
 			<%= image_tag current_user.image_url, id:"logThumb" %>
-		<% end %>
+		
 
 	  	<%= form_tag posts_path, class:"hide-for-large-up", :method => :get do %>
 			<%= text_field_tag :search, params[:search], class:"smallSearch small-8 columns", placeholder: "Search posts" %>
 		<% end %>
 
-		<% if current_user %>
-			<nav>
-				<h3 id="navTop">Menu</h3>
-				<div id="menuToggle">
-		  			<div class="row"><strong>Hi <%= current_user.name %></strong></div>
-		  			<div class="row"><%= link_to 'Main', posts_path %></div>
-		  			<div class="row"><%= link_to 'New Post', new_post_path %></div>
-		  			<div class="row"><%= link_to "Categories", categories_path %></div>
-		  			<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>
-					</div>
-			</nav>		
+		<nav>
+			<h3 id="navTop"><i class="fa fa-bars"></i></h3>
+			<div id="menuToggle">
+	  			<div class="row"><strong>Hi <%= current_user.name %></strong></div>
+	  			<div class="row"><%= link_to 'Main', posts_path %></div>
+	  			<div class="row"><%= link_to 'New Post', new_post_path %></div>
+	  			<div class="row"><%= link_to "Categories", categories_path %></div>
+	  			<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div>
+				</div>
+		</nav>		
 		<% else %>
-			<h4 id="signIN"><%= link_to "Sign in with Facebook", "/auth/facebook" %>
+			<h4 id="signIN"><%= link_to " Sign in", "/auth/facebook", class:"fa fa-facebook-official" %>
 			</h4>
 		<% end %>
 	</nav>

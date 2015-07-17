@@ -16,9 +16,12 @@
 
  */
 
+
+
 body {
 	font-family: avenir;
 	overflow-x: hidden;
+	padding-bottom: 25em !important;
 	/*background-color: rgb(230,230,230);*/
 }
 
@@ -37,7 +40,7 @@ h1, h2, h3, h4 {
  }
 
 h1 {
-	margin-top: .5em;
+	margin-top: 1em;
 	font-size: 8vw;
 	line-height: 1em;
 	text-align: center;
@@ -79,10 +82,10 @@ h1 {
 .smallSearch {
 	position: absolute;
 	top: 0;
-	margin: .25em 20% !important;
-	width: 60% !important;
-	height: 2.5em !important;
-	border-radius: 2.5em !important;
+	margin: .45em 18% !important;
+	width: 64% !important;
+	height: 2.25em !important;
+	/*border-radius: 2.5em !important;*/
 	border: none !important;
 	background: url('bg.jpg') no-repeat center center; 
 	-webkit-background-size: cover;
@@ -126,12 +129,13 @@ h1 {
 	height: 2em;
 	width: 60%;
 	margin: 0em 20% 0;
-	bottom: 3em;
-	font-family: "bebas-neue", bebas neue;
+	padding: 0 5%;
+	bottom: .5em;
+	font-family: "bebas-neue", bebas neue !important;
  	line-height: 2em;
- 	background-color: rgba(255,255,255,.95);
+ 	background-color: rgba(255,255,255,.975);
  	text-align: center;
- 	outline: rgba(255,255,255,.33) solid 2px;
+ 	outline: black solid 2px;
  	z-index: 5000;
  	letter-spacing: .075em;
 }
@@ -321,6 +325,10 @@ h1 {
 
 #showTitle {
 	display: inline-block;
+}
+
+.indexVote {
+	padding: 0;
 }
 
 
