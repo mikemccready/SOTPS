@@ -1,9 +1,5 @@
 class PostsController < ApplicationController
 
-  def redir
-    redirect_to root_path
-  end  
-
   def index
 
     if params[:search].present?

@@ -1,8 +1,5 @@
 class Post < ActiveRecord::Base
 
-	searchkick word_middle: [:title, :description]
-	Post.reindex
-
 	belongs_to :user
 	belongs_to :category
 	has_many :comments
@@ -28,5 +25,10 @@ class Post < ActiveRecord::Base
 		# self.donations.sum(:amount)
 		self.donations.map{|a| a.amount.to_i}.sum/100
 	end	
+
+	def self.search(search)
+  		#where("user_name ilike ?", "%#{query}%") 
+   		where('title ilike :search OR description ilike :search', search: "%#{search}%")
+	end
 
 end
