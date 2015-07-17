@@ -4,10 +4,9 @@
 
 <h1>SUM OF THE PARTS</h1>
 
-<%= form_tag posts_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+  <%= form_tag posts_path, class:"hide-for-large-up", :method => :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search posts" %>
+  <% end %>
 
 <% @posts.each do |post| %>
   <div class="row" id="post">

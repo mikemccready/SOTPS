@@ -57,6 +57,9 @@
 		  		<div class="row"><%= link_to 'New Post', new_post_path %></div>
 		  		<div class="row"><%= link_to "Categories", categories_path %></div><hr>
 		  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div><hr>
+		  		<%= form_tag posts_path, :method => :get do %>
+    				<%= text_field_tag :search, params[:search], placeholder: "Search posts" %>
+					<% end %>
 		  	</div>			
 		<% else %>
 			<h4 id="signinExt"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></h4>
