@@ -10,7 +10,7 @@
 </p>
 <div class="userStats">
   <h4>Vote Balance <%= @user.total_user_votes %></h4>
-  <h4>Total Donations $<%= @user.total_user_votes %></h4>
+  <!-- <h4>Total Donations $<%#= @user.user_funds %></h4> -->
 </div>
 
 <% @posts.each do |post| %>
@@ -24,11 +24,11 @@
       </div>
       <div class="small-12 columns" id="postTag">
         <strong><%= link_to post.title, post, style:"color: white" %></strong><br>
-        <%= post.description[0,70]%>..
+        <%= post.description[0,60]%>..
       </div>
     </div>
 
-    <div class="small-10 columns">
+     <div class="small-9 columns indexVote">
       <!-- votes control -->
       <div class="vote upVote">
         <%#= post.up_votes %>
@@ -43,9 +43,9 @@
       </div> 
 
         <%#= post.down_votes %>
-      <%= post.total_votes %> votes
+      <h4 class="indexVoteCount"><%= post.total_votes %> votes</h4>
     </div>  
-      <strong class="small-2 columns"><%= link_to "More", post %></strong>
+    <h5 class="small-3 columns moreButton"><%= link_to "More", post %></h5>
 
   </div>  
 <% end %>

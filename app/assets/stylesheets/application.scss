@@ -166,7 +166,7 @@ h1 {
 #banner {
 	background-color: rgba(0,0,0,0);
 	text-align: center;
-	margin:2em auto;
+	margin:3em auto 2em;
 }
 
 
@@ -344,12 +344,29 @@ h1 {
 
 .userStats {
 	text-align: right;
-	margin: 2em 0 0;
+	margin: 3em 0 0;
 }
 
 .userStats h4 {
-	line-height: .75em;	
+	line-height: 1em;	
 	letter-spacing: .05em;
+}
+
+.indexVoteCount {
+	display: inline-block;
+	padding-bottom: 1em;
+	letter-spacing: .05em;
+}
+
+.showTitle {
+	letter-spacing: .05em;
+}
+
+.showVotes {
+	font-family: avenir;
+	letter-spacing: .075em;
+	font-size: 1em;
+
 }
 
 

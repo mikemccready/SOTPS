@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def index
 
     if params[:search].present?
-        @posts = Post.search params[:search]      
+      @posts = Post.search params[:search]      
     else
       @posts = Post.all.sort_by{|x| x.total_votes}.reverse
     end  

@@ -22,8 +22,11 @@ class User < ActiveRecord::Base
   	end
 
   	def user_funds
-		# self.donations.sum(:amount)
-		self.posts.map{|a| a.donations.amount.to_i}.sum/100
+		
+		@funds= self.posts.each do |p|
+					p.donations.map
+				end	
+		@funds.amount.sum		
 	end	
     
 end

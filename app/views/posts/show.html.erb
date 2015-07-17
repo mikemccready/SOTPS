@@ -1,8 +1,8 @@
 
   <div class="row" id="post">
-    <h2 class="small-8 columns"><%= @post.title %></h2>
+    <h2 class="small-8 columns showTitle"><%= @post.title %></h2>
     <div id="voteCount" class="small-4 columns">
-      <%= @post.total_votes %> votes
+      <h5 class="showVotes"><%= @post.total_votes %> VOTES</h5>
     </div>  
     <div class="row">
       <%= image_tag @post.image %>
@@ -12,7 +12,7 @@
     <div class="small-7 columns">
       <%= image_tag @post.user.image_url, id:"userBigThumb" %>
       <div id="posterNameDark">
-        <strong><%= @post.user.name %></strong>
+        <strong><%= link_to @post.user.name, user_path %></strong>
       </div>
     </div>    
 
