@@ -18,7 +18,9 @@
 			<%= image_tag current_user.image_url, id:"logThumb" %>
 		<% end %>
 
-		<h2 id="menuHead">SOTPS</h2>
+	  	<%= form_tag posts_path, class:"hide-for-large-up", :method => :get do %>
+			<%= text_field_tag :search, params[:search], class:"smallSearch small-8 columns", placeholder: "Search posts" %>
+		<% end %>
 
 		<% if current_user %>
 			<nav>

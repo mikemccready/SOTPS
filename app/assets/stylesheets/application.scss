@@ -34,7 +34,6 @@ a:hover {
 
 h1, h2, h3, h4 {
  	font-family: "bebas-neue", bebas neue;
- 	font-weight: bold;
  }
 
 h1 {
@@ -77,6 +76,24 @@ h1 {
 	letter-spacing: .05em;
 }
 
+.smallSearch {
+	position: absolute;
+	top: 0;
+	margin: .25em 20% !important;
+	width: 60% !important;
+	height: 2.5em !important;
+	border-radius: 2.5em !important;
+	border: none !important;
+	background: url('bg.jpg') no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	opacity: .66;	
+
+
+}
+
 
 #menuToggle {
 	display: none;
@@ -111,7 +128,6 @@ h1 {
 	margin: 0em 20% 0;
 	bottom: 3em;
 	font-family: "bebas-neue", bebas neue;
- 	font-weight: bold;
  	line-height: 2em;
  	background-color: rgba(255,255,255,.95);
  	text-align: center;
@@ -235,10 +251,9 @@ h1 {
 .moreButton {
 	display: inline-block;
 	height: 2em;
-	width: 5em;
+	width: 4em;
 	letter-spacing: .05em;
 	font-family: "bebas-neue", bebas neue;
- 	font-weight: bold;
  	line-height: 2em;
  	background-color: rgba(255,255,255,1);
  	text-align: center;
@@ -249,7 +264,7 @@ h1 {
 	display: inline-block;
 	height: 3em;
 	width: 3em;
-	margin-bottom: 0;
+	margin: 0;
 	font-family: "bebas-neue", bebas neue;
  	font-weight: bold;
  	line-height: 3em;
