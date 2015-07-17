@@ -12,8 +12,10 @@ users = User.create([
 	{name: 'James Kinsella', organization: 'Desu box', uid: 3, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/20627_408881632615271_287751988586816856_n.png?oh=7d29b3dab1be50808397dc0eae97ff7f&oe=56194E0D'},
 	{name: 'Oleg Malenkov', organization: 'iblazr lab', uid: 4, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10885299_10204397869378952_134260141009885551_n.jpg?oh=08e6f3a6b0f79557a6b4ecfab2d1acb9&oe=565243AD'},
 	{name: 'Holger Willeke', organization: 'airstier', uid: 5, provider: 'seed', image_url: 'https://lh5.googleusercontent.com/-PU1jq3F5cGY/AAAAAAAAAAI/AAAAAAAAAE8/Ghpf_EAGz7Y/photo.jpg'},
-	{name: 'Boaz Frankel', organization: 'Boaz', uid: 6, provider: 'seed', image_url: 'http://media.oregonlive.com/ent_impact_tvfilm/photo/boazfrankeljpg-6b77949e2fcda8ed.jpg'},
-	{name: 'Stefan Loble', organization: 'Bluff Works', uid: 7, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xfp1/t31.0-8/413437_107306752740904_1948881973_o.jpg'},
+	{name: 'Boaz Frankel', organization: 'Boaz', uid: 6, provider: 'seed', image_url: 'https://pbs.twimg.com/profile_images/378800000042357532/8aa9fa64f0a3609bef3802b2564d65a8.jpeg'},
+	{name: 'Stefan Loble', organization: 'Bluff Works', uid: 7, provider: 'seed', image_url: 'https://pbs.twimg.com/profile_images/1679477856/Profile_Pic_2.jpg'},
+	{name: 'Jack Newell', organization: nil, uid: 8, provider: 'seed', image_url: 'https://scontent-lax1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11165248_10206989181514899_42902587999414880_n.jpg?oh=06caa3e551b34eea7344790fb331c3f3&oe=564E0045'},
+	{name: 'Chase Treibt', organization: 'Slip Cup', uid: 9, provider: 'seed', image_url: 'http://odditymall.com/includes/content/slip-cup-plastic-cup-inserts-for-beer-pong-loving-germaphobes-0.jpg'},
 
 ])
 
@@ -42,7 +44,15 @@ posts = Post.create([
 
 	 {title: 'The Bluff Works Chino', description: 'The Bluff Works Chino - an incredibly soft, wrinkle-free pant that can go days without care.',
 	 image: 'https://ksr-ugc.imgix.net/projects/1916244/photo-original.jpg?v=1435183332&w=1024&h=768&fit=crop&auto=format&q=92&s=401cc7242d7008780d3311d18b56cbc9',
-	 user_id: 7, post_url: 'http://bluffworks.com/'},		  	 
+	 user_id: 7, post_url: 'http://bluffworks.com/'},
+
+	 {title: 'The Wabash Lights', description: 'A site-specific light installation created by the public on the Wabash stretch of elevated train tracks (L) in Chicago’s loop.',
+	 image: 'https://wp.streetwise.co/chicagoinno/files/2015/06/Wabash_lights.jpg',
+	 user_id: 8, post_url: 'http://www.jackcnewell.com/'},
+
+	 {title: 'SLIP CUP™: CLEAN BEER PONG', description: 'We created a product that makes ZERO changes to BEER PONG while making it BETTER! That same product makes 15 brand new drinking games!',
+	 image: 'https://9to5toys.files.wordpress.com/2015/07/slip-cup-beer-pong-kickstarter.jpg',
+	 user_id: 9, post_url: 'http://www.slipcup.com/'},		 		  	 
 
 ])
 
@@ -51,14 +61,11 @@ categories = Category.create([
 	{ name: 'Art & Design' },
 	{ name: 'Business' },
 	{ name: 'Education' },
-	{ name: 'Engineering' },
 	{ name: 'Entertainment' },
 	{ name: 'Finance' },
 	{ name: 'Fitness' },
 	{ name: 'Food' },
-	{ name: 'Medicine' },
 	{ name: 'Music' },
-	{ name: 'Non-Profit' },	
 	{ name: 'Programming' },
 	{ name: 'Retail' },
 	{ name: 'Science & Bio-Tech' },
