@@ -2,18 +2,26 @@
 
 <% @users.each do |user| %>
   <div class="row">
-    <div class="small-10 columns"><%= image_tag user.image_url, id:"userIndexThumb" %>
-      <strong><%= link_to user.name, user %></strong></br>
-      <%= user.organization %>
+    <div class="small-11 columns"><%= image_tag user.image_url, id:"userIndexThumb" %>
+      <div class="indexName">
+        <h4><%= link_to user.name, user %></h4>
+        <% if user.organization != nil %>
+          <%= user.organization.upcase %>
+         <% end %> 
+      </div>
     </div>
+      <% if user.total_user_votes != 0 %>
+  <% user.total_user_votes %>
+<% end %>  
     <% if ((user.id == current_user.id) || (current_user.name == "Socrates")) %>  
 	    <div class="small-1 columns"><%= link_to 'Edit', edit_user_path(user) %>
 	    <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-	<% end %>    
+
+      
+	<% end %> 
+
   </div>
 <% end %>
 
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+ 
+<%#= link_to 'New User', new_user_path %>

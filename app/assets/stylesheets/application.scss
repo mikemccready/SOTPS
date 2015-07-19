@@ -145,6 +145,22 @@ h1 {
 	height: 5em;
 	overflow: hidden;
 	border-radius: 50%;
+	display: inline-block;
+}
+
+
+.indexName {
+	display: inline-block;
+  	position: absolute;
+  	margin: 1em;
+  	letter-spacing: .075em;
+}
+
+
+.indexName h4 {
+	line-height: 1em;
+  	padding: 0;
+  	margin: 0;	
 }
 
 
