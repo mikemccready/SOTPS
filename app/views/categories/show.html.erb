@@ -10,24 +10,30 @@
       <div id="idTag">
         <%= image_tag post.user.image_url, class:"small-2 columns", id:"userThumb" %>
         <div id="posterName">
-          <%= post.user.name %>
+          <%= link_to post.user.name, user_path(post.user), style:"color: white" %>
         </div>
       </div>
       <div class="small-12 columns" id="postTag">
-        <strong><%= link_to post.title, post %></strong><br>
+        <strong><%= link_to post.title, post, style:"color: white" %></strong><br>
         <%= post.description[0,70]%>..
       </div>
     </div>
-    <div>
-      <%= post.up_votes %>
-      <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
-        <strong>+</strong>
-      <% end %>  
-      | <%= post.total_votes %> |
-      <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
-        <strong>-</strong>
-      <% end %>  
-      <%= post.down_votes %>
-    </div>
+
+    <div class="small-9 columns indexVote">
+      <!-- votes control -->
+        <%#= post.up_votes %>
+      <%= link_to vote_post_path(post, vote: true), class:"vote upVote", method: 'post' do %>
+        <h2>+</h2>
+      <% end %> 
+
+      <%= link_to vote_post_path(post, vote: false), class:"vote downVote",method: 'post' do %>
+        <h2>-</h2>
+      <% end %> 
+
+
+        <%#= post.down_votes %>
+      <strong><%= post.total_votes %> votes</strong>
+    </div>  
+    <h5 class="small-3 columns moreButton"><%= link_to "More", post %></h5>
   </div>  
 <% end %>
