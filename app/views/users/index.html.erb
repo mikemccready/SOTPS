@@ -1,4 +1,4 @@
-<h1>Users</h1>
+<h2>Contributors</h2>
 
 <% @users.each do |user| %>
   <div class="row">
@@ -10,16 +10,14 @@
          <% end %> 
       </div>
     </div>
-      <% if user.total_user_votes != 0 %>
-  <% user.total_user_votes %>
-<% end %>  
-    <% if ((user.id == current_user.id) || (current_user.name == "Socrates")) %>  
-	    <div class="small-1 columns"><%= link_to 'Edit', edit_user_path(user) %>
-	    <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-
-      
-	<% end %> 
-
+    <% if user.total_user_votes != nil %>
+  		<% user.total_user_votes %>
+		<% end %>  
+    <% if ((user.id == current_user.id) || (current_user.name == "Michael McCready")) %>  
+	    <div class="small-1 columns">
+	    	<%= link_to 'Edit', edit_user_path(user) %>
+	    </div>    
+    <% end %> 
   </div>
 <% end %>
 

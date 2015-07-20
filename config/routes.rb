@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :users
+
+  delete "users/:id" => "users#destroy", as: :delete_user_path
+  
   resources :categories
 
   resources :posts do
