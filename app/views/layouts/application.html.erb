@@ -34,9 +34,9 @@
 	  			<div class="row">
 	  				<%= link_to "Categories", categories_path %>
 	  			</div>
-	  			<div class="row">
-	  				<%= link_to "Contributers", users_path %>
-	  			</div>
+	  			<!-- <div class="row">
+	  				<%#= link_to "Contributers", users_path %>
+	  			</div> -->
 	  			<div class="row">
 	  				<%= link_to "Sign Out", signout_path, id: "sign_out" %>
 	  			</div>
@@ -67,7 +67,7 @@
 		  		<div class="row"><%= link_to 'Main', posts_path %></div>
 		  		<div class="row"><%= link_to 'New Post', new_post_path %></div>
 		  		<div class="row"><%= link_to "Categories", categories_path %></div>
-		  		<div class="row"><%= link_to "Contributers", users_path %></div><hr>
+		  		<!-- <div class="row"><%#= link_to "Contributers", users_path %></div> --><hr>
 		  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div><hr>
 		  		<%= form_tag posts_path, :method => :get do %>
     				<%= text_field_tag :search, params[:search], placeholder: "Search posts" %>
