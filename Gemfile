@@ -38,6 +38,8 @@ gem 'stripe'
 
 gem 'paperclip'
 
+gem 'aws-sdk'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
