@@ -101,20 +101,20 @@ h1 {
 #menuToggle {
 	display: none;
 	width: 100vw;
+	right: 0;
 	z-index: 2000;
 	text-align: right;
-	padding-right: 2.5em;
 }
 
-#menuToggle .row {
+#menuToggle div {
 	margin: 0;
-	padding-right: 1.5em;
+	padding-right: 5em;
 }
 
 #menuToggle .row:hover {
 	background-color: black;
 	background-image: none;
-	color: white;
+	color: white !important;
 }
 
 #menuLogo h2 {
@@ -383,6 +383,11 @@ h1 {
 	letter-spacing: .075em;
 	font-size: 1em;
 
+}
+
+.showImage {
+	width: 100%;
+	height: auto;
 }
 
 
