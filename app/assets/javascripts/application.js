@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
@@ -20,9 +21,10 @@ $(function(){ $(document).foundation(); });
 
 
 
-$(document).ready(function(){
+$(function(){
+	$('#menuToggle').hide();
 	$('#navTop').click(function(){
-		$('#menuToggle').slideToggle()
+		$('#menuToggle').slideToggle(700);
 	});
 });
 
