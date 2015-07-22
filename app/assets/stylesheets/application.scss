@@ -117,10 +117,11 @@ h1 {
 	color: white !important;
 }
 
-#menuLogo h2 {
+.menuLogo h2 {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+	letter-spacing: .075em;
 }
 
 #signIN {
@@ -131,13 +132,23 @@ h1 {
 	margin: 0em 20% 0;
 	padding: 0 5%;
 	bottom: .5em;
-	font-family: "bebas-neue", bebas neue !important;
+	font-family: avenir !important;
  	line-height: 2em;
- 	background-color: rgba(255,255,255,.975);
+ 	background-color: rgba(0,0,0,.975);
  	text-align: center;
  	outline: black solid 2px;
  	z-index: 5000;
  	letter-spacing: .075em;
+ 	color: white;
+}
+
+#signIN a {
+	color: white !important;
+}
+
+#signinExt {
+	font-family: avenir;
+	font-size: 1.25em;
 }
 
 #userIndexThumb {
