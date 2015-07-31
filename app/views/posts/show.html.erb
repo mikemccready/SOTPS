@@ -44,14 +44,12 @@
       <!-- donate section -->
        <p class="small-12 columns">Funds raised $<%= @post.funds %></p>
       <%= form_tag post_donations_path(@post), method: 'post' do |f| %>
-        <div class="small-12 columns donate-button">
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
-                  style.visibility="hidden"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="A month's subscription"
-                  data-amount="500">
-          </script>
-        </div>  
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
+                style.visibility="hidden"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="A month's subscription"
+                data-amount="500">
+        </script> 
       <% end %>
     </div>
   </div>

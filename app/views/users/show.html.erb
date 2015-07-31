@@ -1,6 +1,7 @@
 
 <div id="banner">
-  <%= image_tag @user.image_url, class:"userShowImg" %>
+  <div class="userShowImg" style="background-image: url(<%= @user.image_url %>)"></div>
+  <%#= image_tag @user.image_url, class:"userShowImg" %>
   <h2 class="userShowName">
     <%= @user.name %>
   </h2>
