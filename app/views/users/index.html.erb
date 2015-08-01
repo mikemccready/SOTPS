@@ -2,7 +2,8 @@
 
 <% @users.each do |user| %>
   <div class="row">
-    <div class="small-11 columns"><%= image_tag user.image_url, id:"userIndexThumb" %>
+    <div class="small-11 columns">
+      <div id="userIndexThumb" style="background-image: url(<%= user.image_url %>)"></div>
       <div class="indexName">
         <h4><%= link_to user.name, user %></h4>
         <% if user.organization != nil %>
