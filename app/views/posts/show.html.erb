@@ -57,7 +57,7 @@
         <script src="https://checkout.stripe.com/checkout.js"></script>
         <%= hidden_field_tag 'stripeToken' %>
         <%= hidden_field_tag 'stripeEmail' %>
-        <button id="customButton" class="btn btn-large btn-primary">Donate</button>
+        <div id="customButton" class="donateBtn small-12 columns">Donate</div>
 
          <script>
             var handler = StripeCheckout.configure({
