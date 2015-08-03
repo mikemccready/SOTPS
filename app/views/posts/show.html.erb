@@ -43,13 +43,44 @@
     <div class="row"> 
       <!-- donate section -->
        <p class="small-12 columns">Funds raised $<%= @post.funds %></p>
-      <%= form_tag post_donations_path(@post), method: 'post' do |f| %>
+<!--       <%#= form_tag post_donations_path(@post), method: 'post' do |f| %>
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
                 style.visibility="hidden"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-key="<%#= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="A month's subscription"
                 data-amount="500">
         </script> 
+      <%# end %> -->
+
+
+      <%= form_tag post_donations_path(@post), id: 'chargeForm' do %>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+        <%= hidden_field_tag 'stripeToken' %>
+        <%= hidden_field_tag 'stripeEmail' %>
+        <div id="customButton" class="donateBtn small-12 columns">Donate</div>
+
+         <script>
+            var handler = StripeCheckout.configure({
+            key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+            image: '',
+            token: function(token, args) {
+                  document.getElementById("stripeToken").value = token.id;                              
+                  document.getElementById("stripeEmail").value = token.email;
+                  document.getElementById("chargeForm").submit();
+                }
+              });
+
+            document.getElementById('customButton').addEventListener('click', function(e) {
+              // Open Checkout with further options
+              handler.open({
+                name: 'My Company',
+                description: 'Product ($60.00)',
+                amount: 60*100,
+                shippingAddress: true
+              });
+              e.preventDefault();
+            });
+          </script>
       <% end %>
     </div>
   </div>
