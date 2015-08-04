@@ -24,7 +24,7 @@
     <div class="row">
       <%= image_tag @post.user.image_url, id:"userBigThumb" %>
       <div id="posterNameDark">
-        <%= link_to @post.user.name.upcase, user_path %>
+        <%= link_to @post.user.name.upcase, user_path(@post.user) %>
       </div>
     </div>         
     <div class="row">
