@@ -409,15 +409,16 @@ h1 {
 
 .donateBtn {
 	display: inline-block;
-	height: 2em;
-	width: 100%;
-	letter-spacing: .05em;
+	height: 1.5em;
+	width: 97.5%;
+	left: 1.25%;
+	letter-spacing: .1em;
 	font-family: "bebas-neue", bebas neue;
-	font-weight: bold;
- 	line-height: 2em;
+ 	line-height: 1.5em;
  	font-size: 2em;
  	padding: 0;
- 	background-color: rgba(255,255,255,1);
+ 	background-color: rgba(0,0,0,1);
+ 	color: white;
  	text-align: center;
  	border: rgba(255,255,255,0) solid 2px;
 }

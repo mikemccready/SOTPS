@@ -1,6 +1,8 @@
 
   <div class="row" id="post">
-    <h2 class="small-8 columns showTitle"><%= @post.title %></h2>
+    <h2 class="small-8 columns showTitle"><%= @post.title %>
+      <%= link_to "", "#{@post.post_url}", class:"fa fa-link", target: "_blank" %>
+    </h2>
     <div id="voteCount" class="small-4 columns">
       <h5 class="showVotes"><%= @post.total_votes %> VOTES</h5>
     </div>  
@@ -31,28 +33,15 @@
       </div>
     </div>
     <br>
-    <br>     
-      <%#= post.down_votes %>
-
-    <p class="small-12 columns"><br>
-    <br> <%= @post.description %></p>      
-    <p class="small-12 columns">
-      <%= link_to "Go to Project", "#{@post.post_url}", :target => "_blank" %>
-    </p>
-
-    <div class="row"> 
+    <br>          
+    <div class="row">
+      <p class="small-12 columns">
+        <%= @post.description %>
+      </p>  
       <!-- donate section -->
-       <p class="small-12 columns">Funds raised $<%= @post.funds %></p>
-<!--       <%#= form_tag post_donations_path(@post), method: 'post' do |f| %>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" style.display="none"
-                style.visibility="hidden"
-                data-key="<%#= Rails.configuration.stripe[:publishable_key] %>"
-                data-description="A month's subscription"
-                data-amount="500">
-        </script> 
-      <%# end %> -->
-
-
+      <p class="small-12 columns">
+        Funds raised $<%= @post.funds %>
+      </p>
       <%= form_tag post_donations_path(@post), id: 'chargeForm' do %>
         <script src="https://checkout.stripe.com/checkout.js"></script>
         <%= hidden_field_tag 'stripeToken' %>
@@ -73,10 +62,9 @@
             document.getElementById('customButton').addEventListener('click', function(e) {
               // Open Checkout with further options
               handler.open({
-                name: 'My Company',
-                description: 'Product ($60.00)',
-                amount: 60*100,
-                shippingAddress: true
+                name: 'SOTPS',
+                description: 'Donate',
+                amount: 5*100,
               });
               e.preventDefault();
             });

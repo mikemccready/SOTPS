@@ -13,6 +13,7 @@ end
     @donation = Donation.create(user: current_user, amount: @amount, post_id: @post.id, poster_id: @post.user_id)
       if @donation.valid?
         @donation.save
+        redirect_to post_path(@post)
       end
   
 
@@ -30,7 +31,8 @@ end
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-    redirect_to charges_path
+    # redirect_to charges_path
+
   end
 
   private
