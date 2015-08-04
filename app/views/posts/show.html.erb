@@ -1,53 +1,48 @@
 
   <div class="row" id="post">
-    <h2 class="small-8 columns showTitle"><%= @post.title %>
+    <h2 class="small-12 columns showTitle"><%= @post.title %>
       <%= link_to "", "#{@post.post_url}", class:"fa fa-link", target: "_blank" %>
     </h2>
-    <div id="voteCount" class="small-4 columns">
-      <h5 class="showVotes"><%= @post.total_votes %> VOTES</h5>
-    </div>  
     <div class="row">
       <%= image_tag @post.image, class:"showImage" %>
-    </div>
       <%= @postVotes %>
+    </div>  
     
-    <div class="small-7 columns">
-      <%= image_tag @post.user.image_url, id:"userBigThumb" %>
-      <div id="posterNameDark">
-        <strong><%= link_to @post.user.name, user_path %></strong>
-      </div>
-    </div>    
-
-    <!-- votes control -->
-    <div id="voteControls" class="small-5 columns right">
-      <div class="vote upVote">
-        <%#= post.up_votes %>
-        <%= link_to vote_post_path(@post, vote: true), method: 'post' do %>
+    <div class="row">
+      <h5 class="showVotes small-7 columns"><%= @post.total_votes %> VOTES</h5>
+      <div class="small-5 columns indexVote">
+        <!-- votes control -->
+        <%= link_to vote_post_path(@post, vote: true), class:"vote upVote", method: 'post' do %>
           <h2>+</h2>
         <% end %> 
-      </div>  
-      <div class="vote downVote">
-        <%= link_to vote_post_path(@post, vote: false), method: 'post' do %>
+
+        <%= link_to vote_post_path(@post, vote: false), class:"vote downVote",method: 'post' do %>
           <h2>-</h2>
         <% end %> 
       </div>
     </div>
-    <br>
-    <br>          
     <div class="row">
-      <p class="small-12 columns">
+      <%= image_tag @post.user.image_url, id:"userBigThumb" %>
+      <div id="posterNameDark">
+        <%= link_to @post.user.name.upcase, user_path %>
+      </div>
+    </div>         
+    <div class="row">
+      <p class="small-12 columns descriptShow">
         <%= @post.description %>
       </p>  
       <!-- donate section -->
-      <p class="small-12 columns">
-        Funds raised $<%= @post.funds %>
-      </p>
+      <div class="small-12 columns fundsShow">
+        <h3>FUNDS RAISED</h3>
+        <div class="fundCircle">
+           <h1>$<%= @post.funds %></h1>
+        </div>
+      </div> 
       <%= form_tag post_donations_path(@post), id: 'chargeForm' do %>
         <script src="https://checkout.stripe.com/checkout.js"></script>
         <%= hidden_field_tag 'stripeToken' %>
         <%= hidden_field_tag 'stripeEmail' %>
         <div id="customButton" class="donateBtn small-12 columns">Donate</div>
-
          <script>
             var handler = StripeCheckout.configure({
             key: "<%= Rails.configuration.stripe[:publishable_key] %>",
@@ -68,7 +63,7 @@
               });
               e.preventDefault();
             });
-          </script>
+          </script> 
       <% end %>
     </div>
   </div>
@@ -90,7 +85,7 @@
       <%= image_tag comment.user.image_url, id:"logThumb" %>
       <strong><%= link_to comment.user.name, user_path %></strong>
     </div>  
-      <div id="voteControls" class="small-5 columns right">
+    <div id="voteControls" class="small-5 columns right">
         <div class="vote upVote">
           <%#= post.up_votes %>
           <%= link_to post_comment_vote_path(comment.post, comment, vote: true), method: 'post' do %>
@@ -105,7 +100,7 @@
         </div>  
       </div>
       <p class="small-7 columns"><%= comment.body %></p>
-  <p class="small-5 columns right comment-body"><%= comment.total_votes %> backers</p> 
+      <p class="small-5 columns right comment-body"><%= comment.total_votes %> backers</p> 
 </div>  
 <% end %>
  
