@@ -25,12 +25,17 @@
           <%= post.user.name %>
         </div>
       </div>
+
+      <div class="postVote">
+        <%= post.total_votes %> votes
+      </div>
+
       <div class="small-12 columns" id="postTag">
         <strong><%= link_to post.title, post, style:"color: white" %></strong><br>
         <%= post.description[0,60]%>..
       </div>
     </div>
-
+    <h5 class="small-3 columns moreButton"><%= link_to "More", post %></h5>
      <div class="small-9 columns indexVote">
       <!-- votes control -->
       <div class="vote upVote">
@@ -44,12 +49,7 @@
           <h2>-</h2>
         <% end %> 
       </div> 
-
-        <%#= post.down_votes %>
-      <h4 class="indexVoteCount"><%= post.total_votes %> votes</h4>
     </div>  
-    <h5 class="small-3 columns moreButton"><%= link_to "More", post %></h5>
-
   </div>  
 <% end %>
 
