@@ -19,20 +19,19 @@
 
 
 body {
-	font-family: avenir, "proxima-nova";
+	font-family: avenir, "proxima-nova" !important;
 	overflow-x: hidden;
 	padding-bottom: 25em !important;
 	/*background-color: rgb(230,230,230);*/
 }
 
-a:hover {
-	background-color: (0,0,0,0) !important;
-}
-
-
 .mainWrap {
 	max-width: 65em;
 	margin: 0 auto;
+}
+
+a:hover {
+	background-color: transparent !important;
 }
 
 h1, h2, h3, h4 {
@@ -85,7 +84,6 @@ h1 {
 	margin: .45em 18% !important;
 	width: 64% !important;
 	height: 2.25em !important;
-	/*border-radius: 2.5em !important;*/
 	border: none !important;
 	background: url('bg.jpg') no-repeat center center; 
 	-webkit-background-size: cover;
@@ -99,22 +97,29 @@ h1 {
 
 
 #menuToggle {
-	/*display: none;*/
 	width: 100vw;
 	right: 0;
+	left: 0;
+	margin-top: 0;
 	z-index: 2000;
 	text-align: right;
 }
 
-#menuToggle div {
-	margin: 0;
-	padding-right: 5em;
+#menuToggle .row{
+	width: 100vw;
+	margin-right: 0;
+}	
+
+#menuToggle a:hover {
+	color: black !important;
 }
 
+
+
 #menuToggle .row:hover {
-	background-color: black;
+	background-color: white;
 	background-image: none;
-	color: white !important;
+	color: black !important;
 }
 
 .menuLogo h2 {
@@ -212,6 +217,10 @@ h1 {
 	background: none;
 }
 
+#post {
+	padding-bottom: 0;
+}
+
 #postImg {
 	width: 100%;
 	height: 40vw;
@@ -230,6 +239,18 @@ h1 {
 	background-color: rgba(0,0,0,.33);
 	margin: 1em 0;
 	color: white;
+
+}
+
+.postVote {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: rgba(0,0,0,.33);
+	margin: 1em 0;
+	color: white;
+	display: inline-block;
+	padding: .5em 1em .25em;
 }
 
 #idTag a:visited {	
@@ -244,20 +265,22 @@ h1 {
 
 #userBigThumb {
 	width: 3em;
-	margin: 0;
+	margin: 0 0 0 5%;
 	border-radius: 50%;
 }
 
 #posterName {
 	display: inline-block;
-	padding: .5em 1em .25em 0;
+	padding: .5em 1em .25em .25em;
 	color: white;
 }
 
 #posterNameDark {
 	display: inline-block;
-	padding: .5em 1em .25em 0;
+	padding: 1.25em 1em 0 0;
 	color: black;
+	font-weight: bold;
+	letter-spacing: .125em;
 }
 
 #logThumb {
@@ -289,12 +312,13 @@ h1 {
 
 .moreButton {
 	display: inline-block;
-	height: 2em;
+	height: 3em;
 	width: 4em;
+	margin: 0;
 	letter-spacing: .05em;
 	font-family: "bebas-neue", bebas neue;
- 	line-height: 2em;
- 	background-color: rgba(255,255,255,1);
+ 	line-height: 3em;
+ 	background-color: rgba(255,255,255,0);
  	text-align: center;
  	border: rgba(255,255,255,0) solid 2px;
 }
@@ -309,7 +333,7 @@ h1 {
  	line-height: 3em;
  	background-color: rgba(255,255,255,1);
  	text-align: center;
- 	border: rgba(255,255,255,0) solid 2px;
+ 	border: rgba(255,255,255,1) solid 2px;
 }
 
 .vote h2 {
@@ -319,9 +343,6 @@ h1 {
 	margin: 0;
 }
 
-.downVote h2:hover {
-	color: rgba(180,0,0,1) !important;	
-}
 
 .vote:hover {
 	color: white;
@@ -346,10 +367,6 @@ h1 {
 	border: rgba(0,180,0,1) solid 2px; 
 }
 
-.upVote h2:hover {
-	color: rgba(0,180,0,1);
-}	
-
 #voteCount {
   text-align: right;
   bottom: -1em;
@@ -357,6 +374,8 @@ h1 {
 
 #voteControls {
 	text-align: right;
+	padding: 0;
+	margin: 0;
 }
 
 #showTitle {
@@ -364,6 +383,7 @@ h1 {
 }
 
 .indexVote {
+	text-align: right; 
 	padding: 0;
 	margin: .25em 0;
 }
@@ -396,22 +416,24 @@ h1 {
 }
 
 .showVotes {
-	font-family: avenir, "proxima-nova";
-	letter-spacing: .075em;
-	font-size: 1em;
-
+	font-family: "bebas-neue", bebas neue;
+	letter-spacing: .1em;
+	font-size: 2em;
+	height: 1.5em;
+	line-height: 1.5em;
 }
 
 .showImage {
 	width: 100%;
 	height: auto;
+	margin: 0 0 -5%;
 }
 
 .donateBtn {
 	display: inline-block;
 	height: 1.5em;
-	width: 97.5%;
-	left: 1.25%;
+	width: 95%;
+	left: 2.5%;
 	letter-spacing: .1em;
 	font-family: "bebas-neue", bebas neue;
  	line-height: 1.5em;
@@ -423,6 +445,38 @@ h1 {
  	border: rgba(255,255,255,0) solid 2px;
 }
 
+.fundsShow {
+	margin: 3em auto;
+	text-align: center;
+}
+
+.fundsShow h3 {
+	letter-spacing: .1em;
+}	
+
+.fundCircle {
+	 display: table;
+	width: 50vw;
+	height: 50vw;
+	max-width: 20em;
+	max-height: 20em;
+	border: black 5px solid;
+	border-radius: 50%;
+	margin: 2em auto;
+	background: white;
+}
+
+.fundCircle h1 {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.descriptShow {
+	width: 95%;
+	left: 2.5%;
+}
 
 
 @media only screen and (max-width: 40em) { 
@@ -444,6 +498,15 @@ h1 {
 	#idTag {
 		margin: 0;
 	}	
+
+	.postVote {
+		margin: 0;
+	}
+
+	#menuToggle {
+		margin-left: 0;
+		padding-right: 5%;
+	}
 
 } 
 
