@@ -73,7 +73,7 @@
 		  		<div class="row"><%= link_to "Sign Out", signout_path, id: "sign_out" %></div><hr>
 		  		<%= form_tag posts_path, :method => :get do %>
     				<%= text_field_tag :search, params[:search], placeholder: "Search posts" %>
-					<% end %>
+				<% end %>
 		  	</div>			
 		<% else %>
 			<h4 id="signinExt">

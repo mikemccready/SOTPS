@@ -91,8 +91,10 @@ h1 {
 	-o-background-size: cover;
 	background-size: cover;
 	opacity: .66;	
+}
 
-
+#search {
+	border: none;
 }
 
 
@@ -100,7 +102,7 @@ h1 {
 	width: 100vw;
 	right: 0;
 	left: 0;
-	margin-top: 0;
+	margin-top: 0em;
 	z-index: 2000;
 	text-align: right;
 }
@@ -154,6 +156,7 @@ h1 {
 #signinExt {
 	font-family: avenir, "proxima-nova";
 	font-size: 1.25em;
+	text-align: center;
 }
 
 #userIndexThumb {
@@ -286,7 +289,7 @@ h1 {
 #logThumb {
 	width: 2.25em;
 	border-radius: 50%;
-	margin: .5em;
+	margin: .5em 0 .5em .75em;
 }
 
 #postTag {
