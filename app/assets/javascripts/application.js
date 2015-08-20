@@ -30,23 +30,4 @@ $(function(){
 
 
 
-var handler = StripeCheckout.configure({
-key: "<%= Rails.configuration.stripe[:publishable_key] %>",
-image: '',
-token: function(token, args) {
-      document.getElementById("stripeToken").value = token.id;                              
-      document.getElementById("stripeEmail").value = token.email;
-      document.getElementById("chargeForm").submit();
-    }
-  });
-
-document.getElementById('customButton').addEventListener('click', function(e) {
-  // Open Checkout with further options
-  handler.open({
-    name: 'SOTPS',
-    description: 'Donate',
-    amount: 5*100,
-  });
-  e.preventDefault();
-});
 
